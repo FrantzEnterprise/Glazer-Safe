@@ -1,0 +1,7 @@
+{
+  "show_on_homepage": true,
+  "homepage_max_snippets": 2,
+  "featured_posts": ["001-dial-safe-lock-instructions", "006-safe-opening-methods"],
+  "show_on_chatbot": true,
+  "updated": "2026-05-02"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "001-dial-safe-lock-instructions",
+    "title": "Safe Dial Lock Instructions: A Guide for Every Brand",
+    "excerpt": "Dial lock instructions vary by brand. Learn how to open a Sargent & Greenleaf, LaGard, or Kaba Mas dial safe lock step by step.",
+    "date": "2026-05-02",
+    "category": "Safe Operation",
+    "reading_time": "6 min",
+    "featured": true
+  },
+  {
+    "slug": "002-dial-vs-electronic-locks",
+    "title": "Dial Locks vs Electronic Locks: Which Safe Lock Is Right for You?",
+    "excerpt": "Comparing the reliability, security, and convenience of mechanical dial locks versus electronic keypad locks for home and business safes.",
+    "date": "2026-05-02",
+    "category": "Safe Locks",
+    "reading_time": "7 min",
+    "featured": true
+  },
+  {
+    "slug": "003-importance-of-safe-servicing",
+    "title": "The Importance of Servicing Your Safe: Prevent Problems Before They Start",
+    "excerpt": "Regular safe maintenance prevents lock failures, stuck bolts, and costly emergency openings. Here's what every safe owner should know.",
+    "date": "2026-05-02",
+    "category": "Maintenance",
+    "reading_time": "5 min",
+    "featured": false
+  },
+  {
+    "slug": "004-choose-right-safe",
+    "title": "How to Choose the Right Safe for Your Needs: A Homeowner's Guide",
+    "excerpt": "From gun safes to fire chests to commercial vaults — learn how to match the right safe to your valuables, budget, and risk level.",
+    "date": "2026-05-02",
+    "category": "Buying Guide",
+    "reading_time": "8 min",
+    "featured": false
+  },
+  {
+    "slug": "005-fire-ratings-for-secluded-areas",
+    "title": "What's the Best Fire Rating for a Safe in a Secluded Area?",
+    "excerpt": "Fire ratings matter more in remote or unattached structures. Learn which UL and ETL ratings to look for based on your location.",
+    "date": "2026-05-02",
+    "category": "Safety",
+    "reading_time": "6 min",
+    "featured": false
+  },
+  {
+    "slug": "006-safe-opening-methods",
+    "title": "Safe Opening Methods: Non-Destructive, Precision Drilling, and Burglary Techniques",
+    "excerpt": "From non-destructive manipulation to precision drilling to criminal methods — a transparent look at how safes are opened, what's professional, and what puts your safe at risk.",
+    "date": "2026-05-02",
+    "category": "Safe Opening",
+    "reading_time": "9 min",
+    "featured": true
+  }
+]

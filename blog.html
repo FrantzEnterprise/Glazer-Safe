@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe & Lock Blog | Glazer Safe and Lock | Sacramento Safe Tips</title>
+  <meta name="description" content="Expert advice on safe opening, dial locks vs electronic locks, safe maintenance, fire ratings, and choosing the right safe. From Glazer Safe and Lock in West Sacramento, CA.">
+  <meta name="keywords" content="safe blog Sacramento, safe opening tips, dial lock instructions, safe maintenance, fire ratings, choose safe, Glazer Safe and Lock">
+  <meta name="author" content="Glazer Safe and Lock">
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="West Sacramento">
+  <meta property="og:title" content="Safe & Lock Blog | Glazer Safe and Lock">
+  <meta property="og:description" content="Expert safe opening, lock, and maintenance advice from Sacramento's trusted safe technician.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://glazersafelock.com/blog">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#fafafc;line-height:1.7}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+    .navbar{position:fixed;top:0;left:0;right:0;background:rgba(15,23,42,0.97);backdrop-filter:blur(8px);z-index:1000;padding:14px 0;border-bottom:1px solid rgba(200,150,46,0.2)}
+    .navbar .container{display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.5px}
+    .nav-logo span{color:#c8962e}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{color:rgba(255,255,255,0.85);font-size:.95rem;font-weight:500;transition:color .2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#c8962e;transform:scaleX(0);transition:transform .2s}
+    .nav-links a:hover{color:#fff}
+    .nav-links a:hover::after{transform:scaleX(1)}
+    .nav-cta{background:#c8962e;color:#0f172a!important;padding:10px 24px;border-radius:6px;font-weight:600}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:#dba73b;color:#0f172a!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
+    .nav-links a.active{color:#c8962e}
+
+    .page-header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#0f172a 100%);padding:140px 0 60px;text-align:center;position:relative}
+    .page-header h1{font-family:'Playfair Display',serif;font-size:2.8rem;color:#fff;line-height:1.2;margin-bottom:12px}
+    .page-header p{color:rgba(255,255,255,0.7);font-size:1.15rem;max-width:600px;margin:0 auto}
+
+    .blog-section{padding:80px 0}
+    .blog-grid{display:grid;grid-template-columns:1fr;gap:32px;max-width:860px;margin:0 auto}
+    .blog-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e8e6e0;transition:all .3s;display:flex;flex-direction:column}
+    .blog-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(15,23,42,0.08);border-color:rgba(200,150,46,0.3)}
+    .blog-card-body{padding:32px}
+    .blog-meta{display:flex;gap:16px;font-size:.82rem;color:#6a6a8a;margin-bottom:10px;flex-wrap:wrap}
+    .blog-meta span{display:flex;align-items:center;gap:6px}
+    .blog-meta .cat{background:rgba(200,150,46,0.1);color:#c8962e;padding:2px 12px;border-radius:100px;font-weight:600;font-size:.75rem}
+    .blog-card h2{font-size:1.5rem;font-weight:700;color:#0f172a;margin-bottom:10px;line-height:1.3}
+    .blog-card h2 a{color:#0f172a;transition:color .2s}
+    .blog-card h2 a:hover{color:#c8962e}
+    .blog-card p{color:#4a4a6a;font-size:.95rem;margin-bottom:20px}
+    .blog-card .read-more{display:inline-flex;align-items:center;gap:8px;color:#c8962e;font-weight:600;font-size:.9rem;transition:gap .2s}
+    .blog-card .read-more:hover{gap:14px}
+    .blog-divider{max-width:860px;margin:0 auto;border:0;border-top:1px solid #e8e6e0}
+
+    .blog-cta{background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:60px 0;text-align:center}
+    .blog-cta h2{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;margin-bottom:12px}
+    .blog-cta p{color:rgba(255,255,255,0.7);margin-bottom:24px}
+    .blog-cta a{display:inline-flex;align-items:center;gap:10px;background:#c8962e;color:#0f172a;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem}
+    .blog-cta a:hover{background:#dba73b}
+
+    footer{background:#0a0f1a;padding:40px 0;border-top:1px solid rgba(200,150,46,0.1)}
+    footer .container{display:flex;justify-content:space-between;align-items:center}
+    footer .copy{color:rgba(255,255,255,0.5);font-size:.9rem}
+    footer .copy span{color:#c8962e}
+    footer .copy a{color:#c8962e}
+    footer .copy a:hover{color:#dba73b}
+
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#0f172a;padding:20px 24px;border-bottom:1px solid rgba(200,150,46,0.2)}
+      .nav-links.active{display:flex}.hamburger{display:flex}
+      .page-header h1{font-size:2rem}.page-header{padding:120px 0 40px}
+      .blog-card-body{padding:24px}
+      footer .container{flex-direction:column;gap:12px;text-align:center}
+    }
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Glazer<span>Safe</span>&amp;Lock</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta"><i class="fas fa-phone-alt"></i> (916) 996-9492</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Safe &amp; Lock Blog</h1>
+    <p>Expert advice, tips, and guides from Glazer Safe and Lock — Sacramento's trusted safe technician.</p>
+  </div>
+</section>
+
+<section class="blog-section" id="posts">
+  <div class="container" id="blog-container">
+    <!-- posts will be loaded by JS -->
+  </div>
+</section>
+
+<section class="blog-cta">
+  <div class="container">
+    <h2>Have a Safe or Lock Problem?</h2>
+    <p>Not sure what you need? Call us — we'll diagnose it over the phone.</p>
+    <a href="tel:+19169969492"><i class="fas fa-phone-alt"></i> (916) 996-9492</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copy">&copy; <span id="year"></span> Glazer Safe and Lock. All rights reserved.</div>
+    <div class="copy"><span>West Sacramento, CA</span> — <a href="tel:+19169969492">(916) 996-9492</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',function(){
+    this.classList.toggle('active');
+    document.getElementById('navLinks').classList.toggle('active');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(l){
+    l.addEventListener('click',function(){
+      document.getElementById('hamburger').classList.remove('active');
+      document.getElementById('navLinks').classList.remove('active');
+    });
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Load posts from index
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET','posts-index.json',true);
+  xhr.onload = function(){
+    if(xhr.status===200){
+      try{
+        var posts = JSON.parse(xhr.responseText);
+        renderPosts(posts);
+      }catch(e){el().textContent='Could not load posts.';}
+    }
+  };
+  xhr.onerror = function(){el().textContent='Could not load posts.';};
+  xhr.send();
+
+  function renderPosts(posts){
+    var c = document.getElementById('blog-container');
+    c.innerHTML = '<div class="blog-grid"></div>';
+    var grid = c.querySelector('.blog-grid');
+    posts.forEach(function(p,i){
+      var card = document.createElement('article');
+      card.className = 'blog-card';
+      card.innerHTML = '<div class="blog-card-body">'+
+        '<div class="blog-meta">'+
+          '<span class="cat">'+escapeHTML(p.category)+'</span>'+
+          '<span><i class="far fa-calendar-alt"></i> '+formatDate(p.date)+'</span>'+
+          '<span><i class="far fa-clock"></i> '+p.reading_time+'</span>'+
+        '</div>'+
+        '<h2><a href="posts/'+p.slug+'.html">'+escapeHTML(p.title)+'</a></h2>'+
+        '<p>'+escapeHTML(p.excerpt)+'</p>'+
+        '<a href="posts/'+p.slug+'.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>'+
+      '</div>';
+      grid.appendChild(card);
+      if(i < posts.length-1){
+        var hr = document.createElement('hr');
+        hr.className = 'blog-divider';
+        c.appendChild(hr);
+      }
+    });
+  }
+
+  function escapeHTML(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function formatDate(d){
+    var parts = d.split('-');
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return months[parseInt(parts[1],10)-1] + ' ' + parseInt(parts[2],10) + ', ' + parts[0];
+  }
+</script>
+
+</body>
+</html>
