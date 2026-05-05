@@ -665,6 +665,11 @@
         bot('You can reach Mr. Glazer by email at <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a>. He checks messages regularly and will get back to you.');
         return;
       }
+      // --- Electronic lock / keypad failure (check batteries first) ---
+      if(l.indexOf('keypad')!==-1||l.indexOf('electronic')!==-1||l.indexOf('battery')!==-1||l.indexOf('batteries')!==-1||l.indexOf('non responsive')!==-1||l.indexOf('won\'t work')!==-1||l.indexOf('wont work')!==-1||l.indexOf('not working')!==-1||l.indexOf('doesn\'t work')!==-1||l.indexOf('dead')!==-1||l.indexOf('no power')!==-1||l.indexOf('button')!==-1){
+        bot('That can be frustrating! Let\'s start with the most common fix:<br><br>🔋 <strong>Check the batteries.</strong> Use fresh <strong>Duracell</strong> or <strong>Energizer</strong> batteries only — cheap batteries can cause issues even when they seem new.<br><br>If that doesn\'t do the trick, we have a blog post comparing dial vs electronic locks that might help: <a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>If you\'re still stuck after trying fresh batteries, give Mr. Glazer a call — he\'ll figure it out: <a href="'+PH+'" style="color:#c8962e;font-weight:700;">'+PHONE+'</a>');
+        return;
+      }
       // --- Forgot combination (kind, not pushy) ---
       if(l.indexOf('forgot')!==-1&&(l.indexOf('combination')!==-1||l.indexOf('combo')!==-1||l.indexOf('code')!==-1)){
         bot('Oh no, that\'s frustrating! Don\'t worry — Mr. Glazer can help you get back into your safe.<br><br>📞 <strong>Call him at</strong> <a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.1rem;">'+PHONE+'</a><br><br>We also have a helpful blog post about dial vs electronic locks that might be useful if you\'re curious about different lock types: <a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>Either way, we\'re here to help!');
