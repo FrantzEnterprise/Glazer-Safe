@@ -31,8 +31,7 @@
 
     .navbar{position:fixed;top:0;left:0;right:0;background:rgba(15,23,42,0.97);backdrop-filter:blur(8px);z-index:1000;padding:14px 0;border-bottom:1px solid rgba(200,150,46,0.2)}
     .navbar .container{display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700}
-    .nav-logo img{height:38px;width:auto;border-radius:6px}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.5px}
     .nav-logo span{color:#c8962e}
     .nav-links{display:flex;align-items:center;gap:32px}
     .nav-links a{color:rgba(255,255,255,0.85);font-size:.95rem;font-weight:500;transition:color .2s;position:relative}
@@ -108,7 +107,7 @@
     .about-features li{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:.95rem;color:#1a1a2e}
     .about-features li i{color:#c8962e;margin-top:3px}
     .about-placeholder{background:linear-gradient(rgba(15,23,42,0.6),rgba(15,23,42,0.6)),url('bg-about.jpg') center/cover no-repeat;border-radius:16px;padding:60px 40px;text-align:center;color:#fff;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .about-placeholder img{max-width:200px;height:auto;margin-bottom:16px;border-radius:8px}
+    .about-placeholder i{font-size:3rem;color:#c8962e;margin-bottom:20px}
     .about-placeholder h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:8px}
     .about-placeholder p{color:rgba(255,255,255,0.7);font-size:.95rem}
 
@@ -195,7 +194,7 @@
 
 <nav class="navbar">
   <div class="container">
-    <a href="#home" class="nav-logo"><img src="logo.jpg" alt="Glazer Safe and Lock"> <span>Glazer</span>Safe &amp; Lock</a>
+    <a href="#home" class="nav-logo">Glazer<span>Safe</span>&amp;Lock</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
@@ -270,7 +269,7 @@
       </ul>
     </div>
     <div class="about-visual">
-      <div class="about-placeholder"><img src="logo.jpg" alt="Glazer Safe and Lock"><h3>Glazer Safe and Lock</h3><p>Your trusted safe technician serving Sacramento and beyond.</p></div>
+      <div class="about-placeholder"><i class="fas fa-vault"></i><h3>Glazer Safe and Lock</h3><p>Your trusted safe technician serving Sacramento and beyond.</p></div>
     </div>
   </div>
 </section>
@@ -431,7 +430,7 @@
 
 <footer>
   <div class="container">
-    <div class="copy" style="display:flex;align-items:center;gap:8px"><img src="logo.jpg" alt="Glazer Safe and Lock" style="height:24px;width:auto;border-radius:4px">&copy; <span id="year"></span> Glazer Safe and Lock. All rights reserved.</div>
+    <div class="copy">&copy; <span id="year"></span> Glazer Safe and Lock. All rights reserved.</div>
     <div class="copy"><span>West Sacramento, CA</span> — <a href="tel:+19169969492">(916) 996-9492</a></div>
   </div>
 </footer>
