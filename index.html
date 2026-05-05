@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://glazersafelock.com">
   <meta property="og:locale" content="en_US">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Glazer Safe and Lock","telephone":"+1-916-996-9492","address":{"@type":"PostalAddress","addressLocality":"West Sacramento","addressRegion":"CA","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.5805,"longitude":-121.5302},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"?"}],"areaServed":["Sacramento","West Sacramento","Citrus Heights","Roseville","Elk Grove","Folsom","Carmichael","Rancho Cordova","Davis","Woodland"],"description":"Safe opening, lock repair, combination changes, and emergency safe service for residential and commercial clients.","url":"https://glazersafelock.com","priceRange":"$$"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Glazer Safe and Lock","telephone":"+1-916-996-9492","address":{"@type":"PostalAddress","addressLocality":"West Sacramento","addressRegion":"CA","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.5805,"longitude":-121.5302},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"23:59"}],"areaServed":["Sacramento","West Sacramento","Citrus Heights","Roseville","Elk Grove","Folsom","Carmichael","Rancho Cordova","Davis","Woodland"],"description":"Safe opening, lock repair, combination changes, and emergency safe service for residential and commercial clients.","url":"https://glazersafelock.com","priceRange":"$$"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -407,7 +407,7 @@
       <h2>Get In Touch</h2>
       <p>Need a safe opened, lock repaired, or have a question? Call us or send a message — we'll get back to you fast.</p>
       <div class="contact-detail"><i class="fas fa-phone-alt"></i><div><div class="label">Phone</div><div class="value"><a href="tel:+19169969492">(916) 996-9492</a></div></div></div>
-      <div class="contact-detail"><i class="fas fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Tue–Sat: 6 AM – ?</div></div></div>
+      <div class="contact-detail"><i class="fas fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Tue–Sat: 6 AM – Until Finished</div></div></div>
       <div class="contact-detail"><i class="fas fa-map-pin"></i><div><div class="label">Service Area</div><div class="value">West Sacramento &amp; Greater Sacramento Region</div></div></div>
       <div class="contact-detail"><i class="fas fa-triangle-exclamation"></i><div><div class="label">Emergency</div><div class="value" style="color:#c8962e;">Available — call anytime</div></div></div>
     </div>
@@ -613,7 +613,7 @@
         return;
       }
       if(l.indexOf('hour')!==-1||l.indexOf('location')!==-1||l.indexOf('address')!==-1||l.indexOf('open')!==-1||l.indexOf('close')!==-1){
-        bot('Based in <strong>West Sacramento, CA</strong>.<br><br>🕐 Tue–Sat, 6AM–?<br>🚨 Emergency service available outside those hours.');
+        bot('Based in <strong>West Sacramento, CA</strong>.<br><br>🕐 Tue–Sat, 6AM–Until Finished<br>🚨 Emergency service available outside those hours.');
         return;
       }
       if(l.indexOf('emergency')!==-1||l.indexOf('urgent')!==-1||l.indexOf('locked out')!==-1||l.indexOf('stuck')!==-1){
