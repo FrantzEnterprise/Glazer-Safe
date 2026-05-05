@@ -14,9 +14,9 @@
   <meta property="og:title" content="Glazer Safe and Lock | Expert Safe Opening & Repair">
   <meta property="og:description" content="Professional safe opening, lock repair, and emergency service in West Sacramento and the Sacramento region.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://glazersafelock.com">
+  <meta property="og:url" content="https://glazersafeandlock.com">
   <meta property="og:locale" content="en_US">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Glazer Safe and Lock","telephone":"+1-916-996-9492","address":{"@type":"PostalAddress","addressLocality":"West Sacramento","addressRegion":"CA","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.5805,"longitude":-121.5302},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"23:59"}],"areaServed":["Sacramento","West Sacramento","Citrus Heights","Roseville","Elk Grove","Folsom","Carmichael","Rancho Cordova","Davis","Woodland"],"description":"Safe opening, lock repair, combination changes, and emergency safe service for residential and commercial clients.","url":"https://glazersafelock.com","priceRange":"$$"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Glazer Safe and Lock","telephone":"+1-916-996-9492","address":{"@type":"PostalAddress","addressLocality":"West Sacramento","addressRegion":"CA","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.5805,"longitude":-121.5302},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"23:59"}],"areaServed":["Sacramento","West Sacramento","Citrus Heights","Roseville","Elk Grove","Folsom","Carmichael","Rancho Cordova","Davis","Woodland"],"description":"Safe opening, lock repair, combination changes, and emergency safe service for residential and commercial clients.","url":"https://glazersafeandlock.com","priceRange":"$$"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -409,6 +409,7 @@
       <p>Need a safe opened, lock repaired, or have a question? Call us or send a message — we'll get back to you fast.</p>
       <div class="contact-detail"><i class="fas fa-phone-alt"></i><div><div class="label">Phone</div><div class="value"><a href="tel:+19169969492">(916) 996-9492</a></div></div></div>
       <div class="contact-detail"><i class="fas fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Tue–Sat: 6 AM – Until Finished</div></div></div>
+      <div class="contact-detail"><i class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value"><a href="mailto:glazersafeandlock@fastmail.com">glazersafeandlock@fastmail.com</a></div></div></div>
       <div class="contact-detail"><i class="fas fa-map-pin"></i><div><div class="label">Service Area</div><div class="value">West Sacramento &amp; Greater Sacramento Region</div></div></div>
       <div class="contact-detail"><i class="fas fa-triangle-exclamation"></i><div><div class="label">Emergency</div><div class="value" style="color:#c8962e;">Available — call anytime</div></div></div>
     </div>
@@ -486,7 +487,7 @@
 <!-- GLAZER CHATBOT WIDGET -->
 <script>
 (function(){
-  var PHONE='(916) 996-9492', PH='tel:+19169969492', GREETINGS=['Hi there! Need help with a safe or lock? Ask me anything.','Welcome to Glazer Safe and Lock! How can I help?','Stuck on a safe? Ask me about services, pricing, or book a visit!'];
+  var PHONE='(916) 996-9492', PH='tel:+19169969492', EMAIL='glazersafeandlock@fastmail.com', GREETINGS=['Hi there! I\'m the Glazer Safe assistant. How can I help you today?','Welcome! Whether you need a safe opened, advice on locks, or just have a question — I\'m here for you.','Need help with a safe or lock? Ask away — or upload a photo and I\'ll pass it to Mr. Glazer.','Good to see you! Ask me about services, pricing, hours, or browse our blog for detailed guides.'];
   var faq=[], hist=[], open=false;
 
   function el(t,a,c){
@@ -513,7 +514,7 @@
   };
   xhr.onerror=setF;
   xhr.send();
-  function setF(){faq=[{q:'What services do you offer?',a:'Safe opening, repair, combination changes, lock installation, emergency service, and antique safe work.'},{q:'How do I book?',a:'Call <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> or use our contact form.'},{q:'What are your hours?',a:'Mon-Fri 9AM-4PM. Emergency service available.'}];}
+  function setF(){faq=[{q:'What services do you offer?',a:'Safe opening, repair, combination changes, lock installation, emergency service, and antique safe work.'},{q:'How do I book?',a:'Call <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> or use our contact form.'},{q:'What are your hours?',a:'Tue-Sat 6AM-Until Finished. Emergency service available.'}];}
 
   function tokenize(t){return t.toLowerCase().replace(/[^a-z0-9\s]/g,'').split(/\s+/).filter(Boolean);}
   function score(q,item){
@@ -605,62 +606,82 @@
     typ();var l=q.toLowerCase();
     setTimeout(function(){
       untyp();
-      if(l.indexOf('book')!==-1||l.indexOf('appointment')!==-1||l.indexOf('schedule')!==-1){
-        bot('Call us at <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> to book an appointment. Or use the contact form on this page.');
+      // --- Emergency / urgent ---
+      if(l.indexOf('emergency')!==-1||l.indexOf('urgent')!==-1||l.indexOf('locked out')!==-1||l.indexOf('stuck')!==-1||l.indexOf('can\'t open')!==-1||l.indexOf('wont open')!==-1||l.indexOf('won\'t open')!==-1){
+        bot('I\'m sorry to hear you\'re in a tough spot! 🚨 Please call Mr. Glazer right now for immediate help:<br><br><a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.2rem;">'+PHONE+'</a><br><br>He can walk you through next steps and get you back in your safe as quickly as possible.');
         return;
       }
+      // --- Booking / contact ---
+      if(l.indexOf('book')!==-1||l.indexOf('appointment')!==-1||l.indexOf('schedule')!==-1||l.indexOf('contact')!==-1||l.indexOf('call')!==-1||l.indexOf('reach')!==-1){
+        bot('We\'d be happy to help! You can reach Mr. Glazer directly at:<br><br>📞 <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a><br>📧 <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a><br><br>Or use the contact form on this page and we\'ll get back to you promptly.');
+        return;
+      }
+      // --- Pricing ---
       if(l.indexOf('pric')!==-1||l.indexOf('cost')!==-1||l.indexOf('how much')!==-1||l.indexOf('rate')!==-1||l.indexOf('quote')!==-1||l.indexOf('fee')!==-1||l.indexOf('trip')!==-1){
-        bot('Base rates:<br><br>🔧 Service/Trip Fee — $75+<br>🔑 Combination Change — $175<br>🔓 Safe Opening & Repair — $275+<br>🛡️ Lock Replacement — $275+ + parts<br><br>Call <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> for a personalized quote.');
+        bot('Great question! Here are our general rates:<br><br>🔧 Service/Trip Fee — $75+<br>🔑 Combination Change — $175<br>🔓 Safe Opening & Repair — $275+<br>🛡️ Lock Replacement — $275+ + parts<br><br>These are estimates — every job is a little different. Call Mr. Glazer at <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> for an exact quote based on your specific safe and situation.');
         return;
       }
-      if(l.indexOf('hour')!==-1||l.indexOf('location')!==-1||l.indexOf('address')!==-1||l.indexOf('open')!==-1||l.indexOf('close')!==-1){
-        bot('Based in <strong>West Sacramento, CA</strong>.<br><br>🕐 Tue–Sat, 6AM–Until Finished<br>🚨 Emergency service available outside those hours.');
+      // --- Hours / location ---
+      if(l.indexOf('hour')!==-1||l.indexOf('location')!==-1||l.indexOf('address')!==-1||l.indexOf('open')!==-1||l.indexOf('close')!==-1||l.indexOf('where')!==-1){
+        bot('We\'re based in <strong>West Sacramento, CA</strong> and serve the entire Sacramento area.<br><br>🕐 <strong>Hours:</strong> Tuesday–Saturday, 6 AM – Until Finished<br>🚨 <strong>Emergency service</strong> available outside regular hours — just call!');
         return;
       }
-      if(l.indexOf('emergency')!==-1||l.indexOf('urgent')!==-1||l.indexOf('locked out')!==-1||l.indexOf('stuck')!==-1){
-        bot('🚨 For emergency safe service, call now:<br><br><a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.2rem;">'+PHONE+'</a>');
+      // --- Photo upload ---
+      if(l.indexOf('photo')!==-1||l.indexOf('upload')!==-1||l.indexOf('picture')!==-1||l.indexOf('image')!==-1||l.indexOf('send')!==-1){
+        bot('You can upload a photo using the <strong>image icon</strong> (📷) next to the chat input. That way Mr. Glazer can see exactly what you\'re working with and give you a more accurate estimate!');
         return;
       }
-      if(l.indexOf('photo')!==-1||l.indexOf('upload')!==-1||l.indexOf('picture')!==-1||l.indexOf('image')!==-1){
-        bot('Upload a photo using the <strong>image icon</strong> next to the chat input. Helps us give you a better estimate!');
+      // --- Email / contact info ---
+      if(l.indexOf('email')!==-1||l.indexOf('mail')!==-1){
+        bot('You can reach Mr. Glazer by email at <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a>. He checks messages regularly and will get back to you.');
         return;
       }
-      // Blog-aware answers
+      // ===== BLOG-AWARE ANSWERS =====
+      // Post #1: Dial safe lock instructions
       if(l.indexOf('dial')!==-1||l.indexOf('instruction')!==-1||l.indexOf('sargent')!==-1||l.indexOf('lagard')!==-1||l.indexOf('kaba')!==-1||l.indexOf('spin')!==-1||(l.indexOf('how to open')!==-1&&l.indexOf('safe')!==-1)){
-        bot('📖 <strong>Dial Lock Instructions</strong><br>Each brand dials differently — Sargent &amp; Greenleaf, LaGard, and Kaba Mas all have unique sequences. Read the full guide:<br><br><a href="posts/001-dial-safe-lock-instructions.html" style="color:#c8962e;font-weight:600;">➜ Dial Safe Lock Instructions by Brand</a>');
+        bot('Great topic! Each brand of dial lock works a bit differently. We have a detailed guide that covers Sargent &amp; Greenleaf, LaGard, and Kaba Mas step by step.<br><br><a href="posts/001-dial-safe-lock-instructions.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Safe Lock Instructions by Brand</a><br><br>If you have a specific safe you\'re working with, feel free to call Mr. Glazer and he can help talk you through it.');
         return;
       }
-      if((l.indexOf('dial')!==-1&&l.indexOf('electronic')!==-1)||(l.indexOf('mechanical')!==-1&&l.indexOf('digital')!==-1)||(l.indexOf('which lock')!==-1||l.indexOf('lock type')!==-1||l.indexOf('better lock')!==-1)){
-        bot('📖 <strong>Dial Locks vs Electronic Locks</strong><br>Mechanical dials are reliable for decades; electronic keypads offer speed. Which one fits your needs?<br><br><a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Dial Locks vs Electronic Locks</a>');
+      // Post #2: Dial vs electronic
+      if((l.indexOf('dial')!==-1&&l.indexOf('electronic')!==-1)||(l.indexOf('mechanical')!==-1&&l.indexOf('digital')!==-1)||(l.indexOf('which lock')!==-1)||(l.indexOf('lock type')!==-1)||(l.indexOf('better lock')!==-1)||l.indexOf('keypad')!==-1||l.indexOf('combination')!==-1){
+        bot('That\'s an important decision! Mechanical dial locks and electronic keypad locks each have their own strengths. We wrote a guide comparing them to help you choose.<br><br><a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>Still unsure? Give Mr. Glazer a call — he\'s happy to make a recommendation based on your setup.');
         return;
       }
-      if(l.indexOf('maintenance')!==-1||l.indexOf('service')==='service'||l.indexOf('prevent')!==-1||l.indexOf('inspect')!==-1||l.indexOf('lubricate')!==-1||l.indexOf('graphite')!==-1||l.indexOf('rust')!==-1||(l.indexOf('how often')!==-1&&l.indexOf('safe')!==-1)){
-        bot('📖 <strong>The Importance of Servicing Your Safe</strong><br>Regular maintenance prevents lockouts, stuck bolts, and costly emergency openings. See our recommended schedule:<br><br><a href="posts/003-importance-of-safe-servicing.html" style="color:#c8962e;font-weight:600;">➜ Safe Servicing Guide</a>');
+      // Post #3: Safe servicing / maintenance
+      if(l.indexOf('maintenance')!==-1||l.indexOf('prevent')!==-1||l.indexOf('inspect')!==-1||l.indexOf('lubricate')!==-1||l.indexOf('graphite')!==-1||l.indexOf('rust')!==-1||(l.indexOf('how often')!==-1&&l.indexOf('safe')!==-1)||l.indexOf('care')!==-1){
+        bot('Regular maintenance really does keep your safe working smoothly for years. We have a guide on recommended service schedules and what to look out for.<br><br><a href="posts/003-importance-of-safe-servicing.html" style="color:#c8962e;font-weight:600;">➜ Read: The Importance of Servicing Your Safe</a><br><br>If you haven\'t had your safe serviced in a while, it might be time — Mr. Glazer can take a look.');
         return;
       }
-      if(l.indexOf('choose')!==-1||l.indexOf('buy')!==-1||l.indexOf('purchase')!==-1||l.indexOf('select')!==-1||l.indexOf('recommend')!==-1||l.indexOf('what safe')!==-1||(l.indexOf('size')!==-1&&l.indexOf('safe')!==-1)){
-        bot('📖 <strong>How to Choose the Right Safe</strong><br>From gun safes to fire chests — size, ratings, lock type, and budget all matter. Here\'s our complete guide:<br><br><a href="posts/004-choose-right-safe.html" style="color:#c8962e;font-weight:600;">➜ Safe Buying Guide</a>');
+      // Post #4: Choosing / buying a safe
+      if(l.indexOf('choose')!==-1||l.indexOf('buy')!==-1||l.indexOf('purchase')!==-1||l.indexOf('select')!==-1||l.indexOf('recommend')!==-1||l.indexOf('what safe')!==-1||(l.indexOf('size')!==-1&&l.indexOf('safe')!==-1)||l.indexOf('gun safe')!==-1||l.indexOf('home safe')!==-1){
+        bot('Buying a safe is an investment — you want to get it right. Our guide covers size, fire rating, lock type, and budget to help you decide.<br><br><a href="posts/004-choose-right-safe.html" style="color:#c8962e;font-weight:600;">➜ Read: How to Choose the Right Safe</a><br><br>If you\'d like a personal recommendation, Mr. Glazer is always happy to help based on what you\'re storing and where.');
         return;
       }
-      if(l.indexOf('fire')!==-1||l.indexOf('rating')!==-1||l.indexOf('heat')!==-1||l.indexOf('burn')!==-1||l.indexOf('secluded')!==-1||l.indexOf('garage')!==-1||l.indexOf('outbuilding')!==-1||l.indexOf('workshop')!==-1||l.indexOf('detached')!==-1){
-        bot('📖 <strong>Fire Ratings for Secluded Areas</strong><br>A detached garage or workshop needs much higher fire protection than a bedroom closet. Find the right rating:<br><br><a href="posts/005-fire-ratings-for-secluded-areas.html" style="color:#c8962e;font-weight:600;">➜ Fire Rating Guide</a>');
+      // Post #5: Fire ratings
+      if(l.indexOf('fire')!==-1||l.indexOf('rating')!==-1||l.indexOf('heat')!==-1||l.indexOf('burn')!==-1||l.indexOf('secluded')!==-1||l.indexOf('garage')!==-1||l.indexOf('outbuilding')!==-1||l.indexOf('workshop')!==-1||l.indexOf('detached')!==-1||l.indexOf('fireproof')!==-1){
+        bot('Fire ratings can be confusing — especially when you\'re placing a safe in a garage, workshop, or outbuilding. Our guide breaks down what you actually need.<br><br><a href="posts/005-fire-ratings-for-secluded-areas.html" style="color:#c8962e;font-weight:600;">➜ Read: Fire Ratings for Secluded Areas</a><br><br>Have questions about your specific setup? Mr. Glazer can help — just give him a call.');
         return;
       }
+      // Post #6: Safe opening methods
       if(l.indexOf('manipulation')!==-1||l.indexOf('non-destructive')!==-1||l.indexOf('bypass')!==-1||l.indexOf('scope')!==-1||l.indexOf('drill')!==-1||l.indexOf('drilling')!==-1||l.indexOf('destroy')!==-1||l.indexOf('burglary')!==-1||l.indexOf('peel')!==-1||l.indexOf('pry')!==-1||l.indexOf('crowbar')!==-1||l.indexOf('torch')!==-1||(l.indexOf('crack')!==-1&&l.indexOf('safe')!==-1)){
-        bot('📖 <strong>Safe Opening Methods</strong><br>From non-destructive manipulation to precision drilling to criminal techniques — a complete breakdown of every way a safe gets opened.<br><br><a href="posts/006-safe-opening-methods.html" style="color:#c8962e;font-weight:600;">➜ Read the Full Guide</a>');
+        bot('There are many ways a safe can be opened — some careful and professional, others destructive. We wrote a comprehensive guide covering everything from manipulation to burglary techniques (so you know what to protect against).<br><br><a href="posts/006-safe-opening-methods.html" style="color:#c8962e;font-weight:600;">➜ Read: Safe Opening Methods</a><br><br>If you need your safe opened, Mr. Glazer always prefers non-destructive methods first.');
         return;
       }
-      if(l.indexOf('blog')!==-1||l.indexOf('article')!==-1||l.indexOf('read')!==-1||l.indexOf('tips')!==-1||l.indexOf('guides')!==-1){
-        bot('📚 <strong>Visit our Blog</strong><br>We have articles on dial lock instructions, dial vs electronic locks, safe servicing, buying advice, fire ratings, and safe opening methods.<br><br><a href="blog.html" style="color:#c8962e;font-weight:600;">➜ Read All Articles</a>');
+      // Blog in general
+      if(l.indexOf('blog')!==-1||l.indexOf('article')!==-1||l.indexOf('read')!==-1||l.indexOf('tips')!==-1||l.indexOf('guides')!==-1||l.indexOf('learn')!==-1||l.indexOf('information')!==-1){
+        bot('📚 <strong>Visit our Blog</strong><br>We have helpful articles on dial lock instructions, dial vs electronic locks, safe servicing, buying advice, fire ratings, and safe opening methods.<br><br><a href="blog.html" style="color:#c8962e;font-weight:600;">➜ Read All Articles</a>');
         return;
       }
+      // --- FAQ fuzzy match ---
       var m=best(q,2);
       if(m.length>0){
         var r='';
         m.forEach(function(x,i){if(i>0)r+='<br><br>';r+='💬 <strong>'+x.q+'</strong><br>'+x.a;});
-        bot(r);return;
+        bot(r+'<br><br>If you have more questions, Mr. Glazer is just a phone call away: <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a>');
+        return;
       }
-      bot('Call <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> for help! Or ask me about services, pricing, booking, safe maintenance, lock types, burglary protection, or safe opening methods. 📚 Check our <a href="blog.html" style="color:#c8962e;font-weight:600;">Blog</a> for detailed guides.');
+      // --- Don't know: polite fallback ---
+      bot('That\'s a great question — and I want to make sure you get the right answer. I\'m just a little assistant, but Mr. Glazer himself has over 8 years of hands-on safe experience and would be happy to help.<br><br>📞 <strong>Call him at</strong> <a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.1rem;">'+PHONE+'</a><br>📧 <strong>Or email</strong> <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a><br><br>In the meantime, feel free to browse our <a href="blog.html" style="color:#c8962e;font-weight:600;">Blog</a> for detailed guides on all things safes and locks.');
     },500);
   }
 
