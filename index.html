@@ -665,6 +665,11 @@
         bot('You can reach Mr. Glazer by email at <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a>. He checks messages regularly and will get back to you.');
         return;
       }
+      // --- Forgot combination (kind, not pushy) ---
+      if(l.indexOf('forgot')!==-1&&(l.indexOf('combination')!==-1||l.indexOf('combo')!==-1||l.indexOf('code')!==-1)){
+        bot('Oh no, that\'s frustrating! Don\'t worry — Mr. Glazer can help you get back into your safe.<br><br>📞 <strong>Call him at</strong> <a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.1rem;">'+PHONE+'</a><br><br>We also have a helpful blog post about dial vs electronic locks that might be useful if you\'re curious about different lock types: <a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>Either way, we\'re here to help!');
+        return;
+      }
       // ===== BLOG-AWARE ANSWERS =====
       // Post #1: Dial safe lock instructions
       if(l.indexOf('dial')!==-1||l.indexOf('instruction')!==-1||l.indexOf('sargent')!==-1||l.indexOf('lagard')!==-1||l.indexOf('kaba')!==-1||l.indexOf('spin')!==-1||(l.indexOf('how to open')!==-1&&l.indexOf('safe')!==-1)){
@@ -672,7 +677,7 @@
         return;
       }
       // Post #2: Dial vs electronic
-      if((l.indexOf('dial')!==-1&&l.indexOf('electronic')!==-1)||(l.indexOf('mechanical')!==-1&&l.indexOf('digital')!==-1)||(l.indexOf('which lock')!==-1)||(l.indexOf('lock type')!==-1)||(l.indexOf('better lock')!==-1)||l.indexOf('keypad')!==-1||l.indexOf('combination')!==-1){
+      if((l.indexOf('dial')!==-1&&l.indexOf('electronic')!==-1)||(l.indexOf('mechanical')!==-1&&l.indexOf('digital')!==-1)||(l.indexOf('which lock')!==-1)||(l.indexOf('lock type')!==-1)||(l.indexOf('better lock')!==-1)||l.indexOf('keypad')!==-1||(l.indexOf('combination')!==-1&&l.indexOf('forgot')===-1)){
         bot('That\'s an important decision! Mechanical dial locks and electronic keypad locks each have their own strengths. We wrote a guide comparing them to help you choose.<br><br><a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>Still unsure? Give Mr. Glazer a call — he\'s happy to make a recommendation based on your setup.');
         return;
       }
