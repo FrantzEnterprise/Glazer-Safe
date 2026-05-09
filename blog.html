@@ -84,22 +84,29 @@
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .hamburger.active span:nth-child(2){opacity:0}
     .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    a:focus-visible,.hamburger:focus-visible{outline:2px solid #c8962e;outline-offset:2px}
+    .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:#c8962e;color:#0f172a;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:700;z-index:10000;transition:top .2s}
+    .skip-link:focus{top:0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Main navigation">
   <div class="container">
-    <a href="index.html" class="nav-logo">Glazer<span>Safe</span>&amp;Lock</a>
+    <a href="index.html" class="nav-logo" aria-label="Return to home page">Glazer<span>Safe</span>&amp;Lock</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#services">Services</a></li>
       <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="index.html#contact" class="nav-cta"><i class="fas fa-phone-alt"></i> (916) 996-9492</a></li>
+      <li><a href="index.html#contact" class="nav-cta" aria-label="Call (916) 996-9492"><i class="fas fa-phone-alt" aria-hidden="true"></i> (916) 996-9492</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<section id="main-content" tabindex="-1"></section>
 
 <section class="page-header">
   <div class="container">
@@ -118,7 +125,7 @@
   <div class="container">
     <h2>Have a Safe or Lock Problem?</h2>
     <p>Not sure what you need? Call us — we'll diagnose it over the phone.</p>
-    <a href="tel:+19169969492"><i class="fas fa-phone-alt"></i> (916) 996-9492</a>
+    <a href="tel:+19169969492" aria-label="Call (916) 996-9492"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a>
   </div>
 </section>
 
@@ -132,6 +139,8 @@
 <script>
   document.getElementById('hamburger').addEventListener('click',function(){
     this.classList.toggle('active');
+    var expanded=this.getAttribute('aria-expanded')==='true'?'false':'true';
+    this.setAttribute('aria-expanded',expanded);
     document.getElementById('navLinks').classList.toggle('active');
   });
   document.querySelectorAll('.nav-links a').forEach(function(l){
@@ -166,12 +175,12 @@
       card.innerHTML = '<div class="blog-card-body">'+
         '<div class="blog-meta">'+
           '<span class="cat">'+escapeHTML(p.category)+'</span>'+
-          '<span><i class="far fa-calendar-alt"></i> '+formatDate(p.date)+'</span>'+
-          '<span><i class="far fa-clock"></i> '+p.reading_time+'</span>'+
+          '<span><i aria-hidden="true" class="far fa-calendar-alt"></i> '+formatDate(p.date)+'</span>'+
+          '<span><i aria-hidden="true" class="far fa-clock"></i> '+p.reading_time+'</span>'+
         '</div>'+
         '<h2><a href="posts/'+p.slug+'.html">'+escapeHTML(p.title)+'</a></h2>'+
         '<p>'+escapeHTML(p.excerpt)+'</p>'+
-        '<a href="posts/'+p.slug+'.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>'+
+        '<a href="posts/'+p.slug+'.html" class="read-more">Read Article <i aria-hidden="true" class="fas fa-arrow-right"></i></a>'+
       '</div>';
       grid.appendChild(card);
       if(i < posts.length-1){

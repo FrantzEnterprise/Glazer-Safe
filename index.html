@@ -32,6 +32,7 @@
     .navbar{position:fixed;top:0;left:0;right:0;background:rgba(15,23,42,0.97);backdrop-filter:blur(8px);z-index:1000;padding:14px 0;border-bottom:1px solid rgba(200,150,46,0.2)}
     .navbar .container{display:flex;align-items:center;justify-content:space-between}
     .nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.5px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
     .nav-logo span{color:#c8962e}
     .nav-links{display:flex;align-items:center;gap:32px}
     .nav-links a{color:rgba(255,255,255,0.85);font-size:.95rem;font-weight:500;transition:color .2s;position:relative}
@@ -198,14 +199,18 @@
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .hamburger.active span:nth-child(2){opacity:0}
     .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    a:focus-visible,.btn-submit:focus-visible,.glz-btn:focus-visible,.glz-snd:focus-visible,.glz-upb:focus-visible,.glz-cl:focus-visible,.glz-sc:focus-visible,#cookie-accept:focus-visible,#cookie-decline:focus-visible,.hamburger:focus-visible{outline:2px solid #c8962e;outline-offset:2px}
+    .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:#c8962e;color:#0f172a;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:700;z-index:10000;transition:top .2s}
+    .skip-link:focus{top:0}
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Main navigation">
   <div class="container">
     <a href="#home" class="nav-logo">Glazer<span>Safe</span>&amp;Lock</a>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks" role="list">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#why-us">Why Us</a></li>
@@ -214,30 +219,30 @@
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#areas">Service Area</a></li>
       <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta"><i class="fas fa-phone-alt"></i> (916) 996-9492</a></li>
+      <li><a href="#contact" class="nav-cta"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-location-dot"></i> West Sacramento, CA</div>
+      <div class="hero-badge"><i aria-hidden="true" class="fas fa-location-dot"></i> West Sacramento, CA</div>
       <h1>Trusted <span>Safe Opening</span> &amp; Lock Expert</h1>
       <p>Professional safe opening, lock repair, and emergency service for Sacramento and surrounding cities. Precision work you can count on.</p>
       <div class="hero-buttons">
-        <a href="tel:+19169969492" class="btn-primary"><i class="fas fa-phone-alt"></i> (916) 996-9492</a>
-        <a href="#contact" class="btn-secondary">Request Service <i class="fas fa-arrow-right"></i></a>
+        <a href="tel:+19169969492" class="btn-primary"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a>
+        <a href="#contact" class="btn-secondary">Request Service <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
-        <div class="hero-card-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="hero-card-icon"><i aria-hidden="true" class="fas fa-shield-halved"></i></div>
         <h3>Emergency Safe Service</h3>
         <div class="hero-license-badge">CA DCA, BSIS Lic # LCO 8404</div>
         <p>Locked out of your safe? We respond fast — residential, commercial, and antique safes.</p>
-        <a href="tel:+19169969492" class="phone-link"><i class="fas fa-phone-alt"></i> (916) 996-9492</a>
+        <a href="tel:+19169969492" class="phone-link"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a>
         <div class="hero-stats">
           <div class="hero-stat"><div class="num">8+</div><div class="label">Years Exp</div></div>
           <div class="hero-stat"><div class="num">800+</div><div class="label">Safes Opened</div></div>
@@ -248,20 +253,20 @@
   </div>
 </section>
 
-<section id="services">
+<section id="services" tabindex="-1">
   <div class="container">
     <div class="section-header">
       <div class="section-tag">What We Do</div>
       <h2>Professional Safe &amp; Lock Services</h2>
       <p>From emergency safe openings to routine lock maintenance — we handle it all with precision and care.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card"><div class="service-icon"><i class="fas fa-unlock-keyhole"></i></div><h3>Safe Opening</h3><p>Non-destructive safe opening for combination, digital, and key-lock safes. We get you in without damaging your safe.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-tools"></i></div><h3>Safe Repair</h3><p>Broken handle, stuck bolt, malfunctioning lock — we diagnose and repair all safe types and brands.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-key-skeleton"></i></div><h3>Combination Change</h3><p>Need your safe combination changed? We re-key and reset combinations for maximum security.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-clock"></i></div><h3>Emergency Service</h3><p>Locked out and need access fast? Our emergency safe service gets you back in quickly and safely.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-screwdriver-wrench"></i></div><h3>Lock Installation &amp; Repair</h3><p>Professional lock installation, repair, and replacement for residential and commercial properties.</p></div>
-      <div class="service-card"><div class="service-icon"><i class="fas fa-chess-rook"></i></div><h3>Antique &amp; Vintage Safes</h3><p>Specialized care for antique and vintage safes. We respect the craftsmanship while solving modern access problems.</p></div>
+    <div class="services-grid" role="list" aria-label="Services offered">
+      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-unlock-keyhole"></i></div><h3>Safe Opening</h3><p>Non-destructive safe opening for combination, digital, and key-lock safes. We get you in without damaging your safe.</p></div>
+      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-tools"></i></div><h3>Safe Repair</h3><p>Broken handle, stuck bolt, malfunctioning lock — we diagnose and repair all safe types and brands.</p></div>
+      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-key-skeleton"></i></div><h3>Combination Change</h3><p>Need your safe combination changed? We re-key and reset combinations for maximum security.</p></div>
+      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-clock"></i></div><h3>Emergency Service</h3><p>Locked out and need access fast? Our emergency safe service gets you back in quickly and safely.</p></div>
+      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-screwdriver-wrench"></i></div><h3>Lock Installation &amp; Repair</h3><p>Professional lock installation, repair, and replacement for residential and commercial properties.</p></div>
+      <div class="service-card"><div class="service-icon"><i aria-hidden="true" class="fas fa-chess-rook"></i></div><h3>Antique &amp; Vintage Safes</h3><p>Specialized care for antique and vintage safes. We respect the craftsmanship while solving modern access problems.</p></div>
     </div>
   </div>
 </section>
@@ -274,14 +279,14 @@
       <p>Glazer Safe and Lock is a West Sacramento-based safe and lock service company dedicated to providing expert, reliable, and professional safe opening and repair services throughout the Sacramento region.</p>
       <p>With over 8 years of hands-on experience, more than 800 safes opened, and a perfect 5.0-star rating, Mr. Glazer brings precision, patience, and a deep respect for your property to every job. He starts with an accurate diagnosis, focuses on the target issue, then opens and repairs with care — from modern electronic models to antique mechanical vaults.</p>
       <ul class="about-features">
-        <li><i class="fas fa-circle-check"></i> Licensed &amp; insured professional service</li>
-        <li><i class="fas fa-circle-check"></i> Non-destructive techniques preferred</li>
-        <li><i class="fas fa-circle-check"></i> Transparent pricing — no hidden fees</li>
-        <li><i class="fas fa-circle-check"></i> Same-day service available</li>
+        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Licensed &amp; insured professional service</li>
+        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Non-destructive techniques preferred</li>
+        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Transparent pricing — no hidden fees</li>
+        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Same-day service available</li>
       </ul>
     </div>
     <div class="about-visual">
-      <div class="about-placeholder"><i class="fas fa-vault"></i><h3>Glazer Safe and Lock</h3><p>Your trusted safe technician serving Sacramento and beyond.</p></div>
+      <div class="about-placeholder"><i aria-hidden="true" class="fas fa-vault"></i><h3>Glazer Safe and Lock</h3><p>Your trusted safe technician serving Sacramento and beyond.</p></div>
     </div>
   </div>
 </section>
@@ -294,10 +299,10 @@
       <p>We treat every safe like it's our own — with care, expertise, and absolute respect for what's inside.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-item"><i class="fas fa-medal"></i><h4>Expert Craftsmanship</h4><p>Years of hands-on experience with all safe types — from gun safes to commercial vaults.</p></div>
-      <div class="feature-item"><i class="fas fa-bolt"></i><h4>Fast Response</h4><p>When you're locked out, every minute counts. We prioritize emergency calls and arrive ready to work.</p></div>
-      <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h4>Respectful Service</h4><p>We treat your property with care — clean work, non-destructive methods, and no mess left behind.</p></div>
-      <div class="feature-item"><i class="fas fa-thumbs-up"></i><h4>100% Satisfaction</h4><p>Our reputation is built on happy customers. We don't leave until the job is done right.</p></div>
+      <div class="feature-item"><i aria-hidden="true" class="fas fa-medal"></i><h4>Expert Craftsmanship</h4><p>Years of hands-on experience with all safe types — from gun safes to commercial vaults.</p></div>
+      <div class="feature-item"><i aria-hidden="true" class="fas fa-bolt"></i><h4>Fast Response</h4><p>When you're locked out, every minute counts. We prioritize emergency calls and arrive ready to work.</p></div>
+      <div class="feature-item"><i aria-hidden="true" class="fas fa-hand-holding-heart"></i><h4>Respectful Service</h4><p>We treat your property with care — clean work, non-destructive methods, and no mess left behind.</p></div>
+      <div class="feature-item"><i aria-hidden="true" class="fas fa-thumbs-up"></i><h4>100% Satisfaction</h4><p>Our reputation is built on happy customers. We don't leave until the job is done right.</p></div>
     </div>
   </div>
 </section>
@@ -309,14 +314,14 @@
       <h2>Safes Mr. Glazer Has Opened &amp; Repaired</h2>
       <p>Every safe tells a story. Mr. Glazer first carefully diagnoses the issue, focuses on his target, then opens and repairs with precision. Here are just a few of the safes he's worked on.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/centurion.jpg" alt="Centurion safe opening"></div><div class="gallery-cap">Centurion - Diagnostic &amp; Opening</div></div>
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/safe-work-1.jpg" alt="Safe diagnostic work"></div><div class="gallery-cap">Drilling a Major Vault</div></div>
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/major-open.jpg" alt="Major vault safe opening"></div><div class="gallery-cap">Major Vault - Opened Non-Destructively</div></div>
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/winchester.jpg" alt="Winchester safe repair"></div><div class="gallery-cap">Winchester Lockout, Open &amp; Repair</div></div>
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/drop-safe-2.jpg" alt="Drop safe opening"></div><div class="gallery-cap">AMSEC Drop Safe - Full Servicing</div></div>
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/superior.jpg" alt="Superior safe repair"></div><div class="gallery-cap">Superior Safe - Lock Replacement</div></div>
-      <div class="gallery-item"><div class="img-wrap"><img loading="lazy" src="gallery/safe-work-2.jpg" alt="Safe repair work"></div><div class="gallery-cap">(916) 996-9492</div></div>
+    <div class="gallery-grid" role="list" aria-label="Safe work gallery">
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/centurion.jpg" alt="Centurion safe diagnostic and opening"></div><div class="gallery-cap">Centurion - Diagnostic &amp; Opening</div></div>
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/safe-work-1.jpg" alt="Safe diagnostic work — drilling a major vault"></div><div class="gallery-cap">Drilling a Major Vault</div></div>
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/major-open.jpg" alt="Major vault safe opened non-destructively"></div><div class="gallery-cap">Major Vault - Opened Non-Destructively</div></div>
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/winchester.jpg" alt="Winchester safe lockout open and repair"></div><div class="gallery-cap">Winchester Lockout, Open &amp; Repair</div></div>
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/drop-safe-2.jpg" alt="AMSEC drop safe servicing"></div><div class="gallery-cap">AMSEC Drop Safe - Full Servicing</div></div>
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/superior.jpg" alt="Superior safe lock replacement"></div><div class="gallery-cap">Superior Safe - Lock Replacement</div></div>
+      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/safe-work-2.jpg" alt="Safe repair work shown"></div><div class="gallery-cap">(916) 996-9492</div></div>
     </div>
   </div>
 </section>
@@ -330,7 +335,7 @@
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <div class="pricing-icon"><i class="fas fa-truck"></i></div>
+        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-truck"></i></div>
         <h3>Service / Trip Fee</h3>
         <div class="pricing-amount">$75</div>
         <p class="pricing-note">starting at</p>
@@ -338,21 +343,21 @@
       </div>
       <div class="pricing-card pricing-featured">
         <div class="pricing-badge">Most Common</div>
-        <div class="pricing-icon"><i class="fas fa-unlock-keyhole"></i></div>
+        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-unlock-keyhole"></i></div>
         <h3>Safe Opening &amp; Repair</h3>
         <div class="pricing-amount">$275</div>
         <p class="pricing-note">starting at</p>
         <p>Non-destructive opening and any needed repairs. Price varies by safe type and complexity.</p>
       </div>
       <div class="pricing-card">
-        <div class="pricing-icon"><i class="fas fa-key-skeleton"></i></div>
+        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-key-skeleton"></i></div>
         <h3>Combination Change</h3>
         <div class="pricing-amount">$175</div>
         <p class="pricing-note">plus trip fee</p>
         <p>Re-key or reset combinations on most safe types. Quick and secure.</p>
       </div>
       <div class="pricing-card">
-        <div class="pricing-icon"><i class="fas fa-shield"></i></div>
+        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-shield"></i></div>
         <h3>Lock Replacement &amp; Upgrades</h3>
         <div class="pricing-amount">$275</div>
         <p class="pricing-note">starting at + parts</p>
@@ -360,7 +365,7 @@
       </div>
     </div>
     <div class="pricing-disclaimer">
-      <i class="fas fa-info-circle"></i> Every safe is different — these are base rates. Call <a href="tel:+19169969492">(916) 996-9492</a> for a personalized quote on your specific safe.
+      <i aria-hidden="true" class="fas fa-info-circle"></i> Every safe is different — these are base rates. Call <a href="tel:+19169969492">(916) 996-9492</a> for a personalized quote on your specific safe.
     </div>
   </div>
 </section>
@@ -376,7 +381,7 @@
       <!-- loaded by JS from blog-config.json and posts-index.json -->
     </div>
     <div style="text-align:center;margin-top:28px;">
-      <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;color:#c8962e;font-weight:700;font-size:1rem;transition:gap .2s;">View All Articles <i class="fas fa-arrow-right"></i></a>
+      <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;color:#c8962e;font-weight:700;font-size:1rem;transition:gap .2s;">View All Articles <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -388,19 +393,19 @@
       <h2>Serving Sacramento &amp; Surrounding Cities</h2>
       <p>We travel to you — anywhere in the greater Sacramento area with fast, reliable service.</p>
     </div>
-    <div class="areas-grid">
-      <div class="area-chip">Sacramento</div><div class="area-chip">West Sacramento</div><div class="area-chip">Citrus Heights</div><div class="area-chip">Roseville</div>
-      <div class="area-chip">Elk Grove</div><div class="area-chip">Folsom</div><div class="area-chip">Carmichael</div><div class="area-chip">Rancho Cordova</div><div class="area-chip">Davis</div><div class="area-chip">Woodland</div>
-      <div class="area-chip">Fair Oaks</div><div class="area-chip">North Highlands</div>
+    <div class="areas-grid" role="list" aria-label="Service area cities">
+      <div class="area-chip" role="listitem">Sacramento</div><div class="area-chip" role="listitem">West Sacramento</div><div class="area-chip" role="listitem">Citrus Heights</div><div class="area-chip" role="listitem">Roseville</div>
+      <div class="area-chip" role="listitem">Elk Grove</div><div class="area-chip" role="listitem">Folsom</div><div class="area-chip" role="listitem">Carmichael</div><div class="area-chip" role="listitem">Rancho Cordova</div><div class="area-chip" role="listitem">Davis</div><div class="area-chip" role="listitem">Woodland</div>
+      <div class="area-chip" role="listitem">Fair Oaks</div><div class="area-chip" role="listitem">North Highlands</div>
     </div>
   </div>
 </section>
 
 <section class="emergency-banner">
   <div class="container">
-    <h2><i class="fas fa-bolt"></i> Emergency Safe Service Available</h2>
+    <h2><i aria-hidden="true" class="fas fa-bolt"></i> Emergency Safe Service Available</h2>
     <p>Locked out after hours? Call our emergency line — we'll get you back in.</p>
-    <a href="tel:+19169969492" class="emergency-phone"><i class="fas fa-phone-alt"></i> (916) 996-9492</a>
+    <a href="tel:+19169969492" class="emergency-phone" aria-label="Emergency call (916) 996-9492"><i class="fas fa-phone-alt" aria-hidden="true"></i> (916) 996-9492</a>
   </div>
 </section>
 
@@ -413,17 +418,17 @@
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testimonial-stars"><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i></div>
         <p>"I was locked out of my gun safe on a Sunday morning. Called Glazer and they walked me through the process — had me in within an hour. Professional, fast, and fair priced."</p>
         <div class="testimonial-author">— Mark T., Sacramento</div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testimonial-stars"><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i></div>
         <p>"Needed the combination changed on my office safe after an employee left. Glazer came out same day, did the work in 20 minutes. Highly recommend."</p>
         <div class="testimonial-author">— Jessica R., West Sacramento</div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testimonial-stars"><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i></div>
         <p>"My antique safe from the 1920s wouldn't open and I was nervous about damage. Glazer handled it like a pro — opened it without a scratch. True craftsman."</p>
         <div class="testimonial-author">— David K., Folsom</div>
       </div>
@@ -436,26 +441,27 @@
     <div class="contact-info">
       <h2>Get In Touch</h2>
       <p>Need a safe opened, lock repaired, or have a question? Call us or send a message — we'll get back to you fast.</p>
-      <div class="contact-detail"><i class="fas fa-phone-alt"></i><div><div class="label">Phone</div><div class="value"><a href="tel:+19169969492">(916) 996-9492</a></div></div></div>
-      <div class="contact-detail"><i class="fas fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Tue–Sat: 6 AM – Until Finished</div></div></div>
-      <div class="contact-detail"><i class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value"><a href="mailto:glazersafeandlock@fastmail.com">glazersafeandlock@fastmail.com</a></div></div></div>
-      <div class="contact-detail"><i class="fas fa-map-pin"></i><div><div class="label">Service Area</div><div class="value">West Sacramento &amp; Greater Sacramento Region</div></div></div>
-      <div class="contact-detail"><i class="fas fa-triangle-exclamation"></i><div><div class="label">Emergency</div><div class="value" style="color:#c8962e;">Available — call anytime</div></div></div>
+      <div class="contact-detail"><i aria-hidden="true" class="fas fa-phone-alt"></i><div><div class="label">Phone</div><div class="value"><a href="tel:+19169969492">(916) 996-9492</a></div></div></div>
+      <div class="contact-detail"><i aria-hidden="true" class="fas fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Tue–Sat: 6 AM – Until Finished</div></div></div>
+      <div class="contact-detail"><i aria-hidden="true" class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value"><a href="mailto:glazersafeandlock@fastmail.com">glazersafeandlock@fastmail.com</a></div></div></div>
+      <div class="contact-detail"><i aria-hidden="true" class="fas fa-map-pin"></i><div><div class="label">Service Area</div><div class="value">West Sacramento &amp; Greater Sacramento Region</div></div></div>
+      <div class="contact-detail"><i aria-hidden="true" class="fas fa-triangle-exclamation"></i><div><div class="label">Emergency</div><div class="value" style="color:#c8962e;">Available — call anytime</div></div></div>
     </div>
     <form class="contact-form" id="contactForm">
       <h3>Send Us a Message</h3>
-      <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
-      <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
-      <div class="form-group"><input type="tel" name="phone" placeholder="Your Phone"></div>
+      <div class="form-group"><label for="contactName" class="sr-only">Your Name</label><input type="text" id="contactName" name="name" placeholder="Your Name" required></div>
+      <div class="form-group"><label for="contactEmail" class="sr-only">Your Email</label><input type="email" id="contactEmail" name="email" placeholder="Your Email" required></div>
+      <div class="form-group"><label for="contactPhone" class="sr-only">Your Phone</label><input type="tel" id="contactPhone" name="phone" placeholder="Your Phone"></div>
       <div class="form-group">
-        <select name="service">
+        <label for="contactService" class="sr-only">Select a Service</label>
+        <select name="service" id="contactService">
           <option value="">Select a Service...</option>
           <option>Safe Opening</option><option>Safe Repair</option><option>Combination Change</option>
           <option>Lock Installation / Repair</option><option>Emergency Service</option><option>Antique Safe</option><option>Other</option>
         </select>
       </div>
-      <div class="form-group"><textarea name="message" placeholder="Tell us about your safe or lock issue..." required></textarea></div>
-      <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+      <div class="form-group"><label for="contactMessage" class="sr-only">Message</label><textarea name="message" id="contactMessage" placeholder="Tell us about your safe or lock issue..." required></textarea></div>
+      <button type="submit" class="btn-submit"><i aria-hidden="true" class="fas fa-paper-plane"></i> Send Message</button>
     </form>
   </div>
 </section>
@@ -471,6 +477,8 @@
   // Hamburger menu toggle
   document.getElementById('hamburger').addEventListener('click',function(){
     this.classList.toggle('active');
+    var expanded=this.getAttribute('aria-expanded')==='true'?'false':'true';
+    this.setAttribute('aria-expanded',expanded);
     document.getElementById('navLinks').classList.toggle('active');
   });
   document.querySelectorAll('.nav-links a').forEach(function(l){
@@ -528,6 +536,7 @@
       else if(k==='on'&&typeof v==='object') Object.keys(v).forEach(function(ev){e.addEventListener(ev,v[ev]);});
       else if(k==='innerHTML') e.innerHTML=v;
       else if(k==='textContent') e.textContent=v;
+      else if(k==='attrs'&&typeof v==='object') Object.keys(v).forEach(function(ak){e.setAttribute(ak,v[ak]);});
       else e.setAttribute(k,v);
     });
     if(c) (Array.isArray(c)?c:[c]).forEach(function(x){if(typeof x==='string') e.appendChild(document.createTextNode(x));else if(x)e.appendChild(x);});
@@ -562,19 +571,19 @@
   // Build widget
   function build(){
     if(document.getElementById('glz-btn'))return;
-    var btn=el('button',{id:'glz-btn',className:'glz-btn',innerHTML:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'});
+    var btn=el('button',{id:'glz-btn',className:'glz-btn',innerHTML:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',attrs:{'aria-label':'Open chat'}});
     var pnl=el('div',{id:'glz-pnl',className:'glz-pnl',style:{display:'none'}});
     var hdr=el('div',{className:'glz-hdr'},[
       el('div',{className:'glz-hinfo'},[
         el('div',{className:'glz-av'},[el('img',{src:'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><circle cx="18" cy="18" r="16" fill="#c8962e"/><path d="M10 25 L15 12 Q18 8 21 12 L26 25 M13 20 L23 20" stroke="#0f172a" stroke-width="2" fill="none"/></svg>'),style:{width:'36px',height:'36px',borderRadius:'50%',display:'block'}})]),
         el('div',null,[el('div',{className:'glz-nm'},'Glazer Safe & Lock'),el('div',{className:'glz-st'},'Online')])
       ]),
-      el('button',{className:'glz-cl',innerHTML:'&times;',on:{click:toggle}})
+      el('button',{className:'glz-cl',innerHTML:'&times;',attrs:{'aria-label':'Close chat'},on:{click:toggle}})
     ]);
     var msgs=el('div',{id:'glz-msgs',className:'glz-msgs'});
     var iw=el('div',{className:'glz-iw'},[
       el('div',{className:'glz-upw'},[
-        el('button',{className:'glz-upb',innerHTML:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',on:{click:function(){document.getElementById('glz-img').click();}}}),
+        el('button',{className:'glz-upb',innerHTML:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',attrs:{'aria-label':'Upload photo'},on:{click:function(){document.getElementById('glz-img').click();}}}),
         el('input',{type:'file',id:'glz-img',accept:'image/*',style:{display:'none'},on:{change:function(e){
           var f=e.target.files[0];if(!f)return;
           var r=new FileReader();r.onload=function(ev){
@@ -585,7 +594,7 @@
         }}})
       ]),
       el('input',{type:'text',id:'glz-inp',className:'glz-inp',placeholder:'Ask about services, pricing...',on:{keydown:function(e){if(e.key==='Enter'){e.preventDefault();send();}}}}),
-      el('button',{className:'glz-snd',innerHTML:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',on:{click:send}})
+      el('button',{className:'glz-snd',innerHTML:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',attrs:{'aria-label':'Send message'},on:{click:send}})
     ]);
     var sug=el('div',{id:'glz-sug',className:'glz-sug'});
     pnl.appendChild(hdr);pnl.appendChild(msgs);pnl.appendChild(sug);pnl.appendChild(iw);
@@ -741,7 +750,7 @@
 </script>
 
 <!-- COOKIE CONSENT BANNER -->
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:16px 24px;display:none;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:2px solid #c8962e;font-family:Inter,sans-serif;font-size:.9rem;line-height:1.5">
+<div id="cookie-banner" role="alertdialog" aria-label="Cookie notice" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:16px 24px;display:none;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:2px solid #c8962e;font-family:Inter,sans-serif;font-size:.9rem;line-height:1.5">
   <div style="flex:1;min-width:240px">
     <strong style="color:#c8962e">Cookie Notice</strong>
     <span style="color:rgba(255,255,255,0.7)"> — This site uses minimal cookies for functionality. We don't track or sell your data. By continuing, you accept basic cookies. <a href="legal.html" style="color:#c8962e;text-decoration:underline">Learn more</a>.</span>
