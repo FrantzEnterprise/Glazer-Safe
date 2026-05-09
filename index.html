@@ -776,5 +776,94 @@
 })();
 </script>
 
+<!-- ADA ACCESSIBILITY CONTROLS -->
+<div id="ada-btn" role="button" tabindex="0" aria-label="Accessibility options" style="position:fixed;bottom:28px;left:28px;z-index:9995;width:56px;height:56px;border-radius:50%;border:none;background:#0f172a;color:#c8962e;cursor:pointer;box-shadow:0 4px 20px rgba(15,23,42,0.3);display:flex;align-items:center;justify-content:center;transition:transform .2s;font-size:1.4rem" onclick="toggleADA()" onkeydown="if(event.key==='Enter'||event.key===' ')event.preventDefault(),toggleADA()">
+  <i aria-hidden="true" class="fas fa-universal-access"></i>
+</div>
+
+<div id="ada-panel" style="position:fixed;bottom:100px;left:28px;z-index:9995;width:280px;background:#fff;border-radius:16px;box-shadow:0 12px 48px rgba(15,23,42,0.15);border:1px solid #e8e6e0;display:none;flex-direction:column;overflow:hidden;font-family:Inter,sans-serif;animation:adaUp .3s ease">
+  <div style="background:#0f172a;color:#fff;padding:14px 20px;font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:10px">
+    <i aria-hidden="true" class="fas fa-universal-access" style="color:#c8962e"></i> Accessibility
+    <button onclick="toggleADA()" aria-label="Close accessibility panel" style="margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.5);font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px">&times;</button>
+  </div>
+  <div style="padding:16px 20px;display:flex;flex-direction:column;gap:12px">
+    <!-- Font size -->
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">Text Size</span>
+      <div style="display:flex;gap:6px">
+        <button onclick="adaChangeFont(-1)" aria-label="Decrease text size" style="width:36px;height:36px;border-radius:50%;border:1px solid #d4d2cc;background:#f8f7f4;cursor:pointer;font-weight:700;color:#1a1a2e">A-</button>
+        <button onclick="adaResetFont()" aria-label="Reset text size to default" style="width:36px;height:36px;border-radius:50%;border:1px solid #c8962e;background:#fff;cursor:pointer;font-weight:700;color:#1a1a2e;font-size:.8rem">A</button>
+        <button onclick="adaChangeFont(1)" aria-label="Increase text size" style="width:36px;height:36px;border-radius:50%;border:1px solid #d4d2cc;background:#f8f7f4;cursor:pointer;font-weight:700;color:#1a1a2e">A+</button>
+      </div>
+    </div>
+    <hr style="border:0;border-top:1px solid #e8e6e0;margin:2px 0">
+    <!-- High contrast -->
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">High Contrast</span>
+      <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+        <input type="checkbox" id="ada-contrast" onchange="adaToggleContrast()" style="opacity:0;width:0;height:0">
+        <span style="position:absolute;inset:0;background:#d4d2cc;border-radius:24px;transition:background .3s"></span>
+        <span id="ada-contrast-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
+      </label>
+    </div>
+    <hr style="border:0;border-top:1px solid #e8e6e0;margin:2px 0">
+    <!-- Larger cursor -->
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">Larger Cursor</span>
+      <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+        <input type="checkbox" id="ada-cursor" onchange="adaToggleCursor()" style="opacity:0;width:0;height:0">
+        <span style="position:absolute;inset:0;background:#d4d2cc;border-radius:24px;transition:background .3s"></span>
+        <span id="ada-cursor-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
+      </label>
+    </div>
+    <hr style="border:0;border-top:1px solid #e8e6e0;margin:2px 0">
+    <!-- Pause animations -->
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">Pause Animations</span>
+      <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+        <input type="checkbox" id="ada-anim" onchange="adaToggleAnim()" style="opacity:0;width:0;height:0">
+        <span style="position:absolute;inset:0;background:#d4d2cc;border-radius:24px;transition:background .3s"></span>
+        <span id="ada-anim-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes adaUp{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0)}}
+  #ada-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(15,23,42,0.4)}
+  #ada-btn:focus-visible{outline:2px solid #c8962e;outline-offset:4px}
+  .ada-high-contrast{background:#111!important;color:#fff!important;border-color:#c8962e!important}
+  .ada-high-contrast h1,.ada-high-contrast h2,.ada-high-contrast h3,.ada-high-contrast h4,.ada-high-contrast .section-tag,.ada-high-contrast .nav-logo{color:#c8962e!important}
+  .ada-high-contrast p,.ada-high-contrast li,.ada-high-contrast .value,.ada-high-contrast .label{color:#fff!important}
+  .ada-high-contrast a{color:#ffd166!important}
+  .ada-high-contrast .hero-card,.ada-high-contrast .service-card,.ada-high-contrast .pricing-card,.ada-high-contrast .testimonial-card,.ada-high-contrast .blog-card{background:#1a1a2e!important;border-color:#c8962e!important}
+  .ada-high-contrast .pricing-card .price{color:#ffd166!important}
+  .ada-high-contrast .galz-cap{background:#1a1a2e!important}
+  .ada-high-contrast .navbar{background:#0a0f1a!important}
+  .ada-high-contrast .btn-primary{background:#c8962e!important;color:#0f172a!important}
+  .ada-high-contrast .btn-secondary{border-color:#c8962e!important;color:#c8962e!important}
+  .ada-large-cursor{cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="%23c8962e" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="%23c8962e"/></svg>'),auto!important}
+  .ada-paused *, .ada-paused *::before, .ada-paused *::after{animation-play-state:paused!important;transition-duration:0s!important;scroll-behavior:auto!important}
+</style>
+
+<script>
+(function(){
+  // Load saved preferences
+  var font=parseInt(localStorage.getItem('ada_font')||'0',10);
+  if(font!==0) document.documentElement.style.fontSize=(100+font*5)+'%';
+  if(localStorage.getItem('ada_contrast')==='1'){document.body.classList.add('ada-high-contrast');document.getElementById('ada-contrast').checked=true;document.getElementById('ada-contrast-knob').style.transform='translateX(20px)';}
+  if(localStorage.getItem('ada_cursor')==='1'){document.body.classList.add('ada-large-cursor');document.getElementById('ada-cursor').checked=true;document.getElementById('ada-cursor-knob').style.transform='translateX(20px)';}
+  if(localStorage.getItem('ada_anim')==='1'){document.documentElement.classList.add('ada-paused');document.getElementById('ada-anim').checked=true;document.getElementById('ada-anim-knob').style.transform='translateX(20px)';}
+})();
+var adaFontSize=parseInt(localStorage.getItem('ada_font')||'0',10);
+function toggleADA(){var p=document.getElementById('ada-panel');p.style.display=p.style.display==='flex'?'none':'flex';}
+function adaChangeFont(d){adaFontSize=Math.max(-2,Math.min(2,adaFontSize+d));document.documentElement.style.fontSize=(100+adaFontSize*5)+'%';localStorage.setItem('ada_font',adaFontSize);}
+function adaResetFont(){adaFontSize=0;document.documentElement.style.fontSize='';localStorage.setItem('ada_font','0');}
+function adaToggleContrast(){var on=document.getElementById('ada-contrast').checked;document.body.classList.toggle('ada-high-contrast',on);document.getElementById('ada-contrast-knob').style.transform=on?'translateX(20px)':'';localStorage.setItem('ada_contrast',on?'1':'0');}
+function adaToggleCursor(){var on=document.getElementById('ada-cursor').checked;document.body.classList.toggle('ada-large-cursor',on);document.getElementById('ada-cursor-knob').style.transform=on?'translateX(20px)':'';localStorage.setItem('ada_cursor',on?'1':'0');}
+function adaToggleAnim(){var on=document.getElementById('ada-anim').checked;document.documentElement.classList.toggle('ada-paused',on);document.getElementById('ada-anim-knob').style.transform=on?'translateX(20px)':'';localStorage.setItem('ada_anim',on?'1':'0');}
+</script>
+
 </body>
 </html>
