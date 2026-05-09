@@ -462,7 +462,7 @@
 
 <footer>
   <div class="container">
-    <div class="copy">&copy; <span id="year"></span> Glazer Safe and Lock. All rights reserved.</div>
+    <div class="copy">&copy; <span id="year"></span> Glazer Safe and Lock. All rights reserved. &nbsp;|&nbsp; <a href="legal.html" style="color:#c8962e;">Privacy &amp; Legal</a></div>
     <div class="copy"><span>West Sacramento, CA</span> — <a href="tel:+19169969492">(916) 996-9492</a></div>
   </div>
 </footer>
@@ -663,6 +663,11 @@
       // --- Email / contact info ---
       if(l.indexOf('email')!==-1||l.indexOf('mail')!==-1){
         bot('You can reach Mr. Glazer by email at <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a>. He checks messages regularly and will get back to you.');
+        return;
+      }
+      // --- Privacy / legal ---
+      if(l.indexOf('privacy')!==-1||l.indexOf('legal')!==-1||l.indexOf('disclaimer')!==-1){
+        bot('You can view our full Privacy Policy and Legal Disclaimer here: <a href="legal.html" style="color:#c8962e;font-weight:600;">➜ Privacy &amp; Legal</a>');
         return;
       }
       // --- Electronic lock / keypad failure (check batteries first) ---
