@@ -740,5 +740,32 @@
 })();
 </script>
 
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:16px 24px;display:none;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:2px solid #c8962e;font-family:Inter,sans-serif;font-size:.9rem;line-height:1.5">
+  <div style="flex:1;min-width:240px">
+    <strong style="color:#c8962e">Cookie Notice</strong>
+    <span style="color:rgba(255,255,255,0.7)"> — This site uses minimal cookies for functionality. We don't track or sell your data. By continuing, you accept basic cookies. <a href="legal.html" style="color:#c8962e;text-decoration:underline">Learn more</a>.</span>
+  </div>
+  <div style="display:flex;gap:8px;flex-shrink:0">
+    <button id="cookie-accept" style="background:#c8962e;color:#0f172a;border:none;padding:10px 24px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.85rem;font-family:Inter,sans-serif">Accept</button>
+    <button id="cookie-decline" style="background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.2);padding:10px 24px;border-radius:6px;font-weight:500;cursor:pointer;font-size:.85rem;font-family:Inter,sans-serif">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  var banner=document.getElementById('cookie-banner');
+  if(localStorage.getItem('glz_cookie_consent')){return;}
+  banner.style.display='flex';
+  document.getElementById('cookie-accept').addEventListener('click',function(){
+    localStorage.setItem('glz_cookie_consent','accepted');
+    banner.style.display='none';
+  });
+  document.getElementById('cookie-decline').addEventListener('click',function(){
+    localStorage.setItem('glz_cookie_consent','declined');
+    banner.style.display='none';
+  });
+})();
+</script>
+
 </body>
 </html>
