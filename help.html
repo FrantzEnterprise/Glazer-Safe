@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+<title>❓ Help Guide — LockCMD</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--bg2:#161b22;--surface:#21262d;--surface2:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#f0883e;--green:#3fb950;--orange:#d29922;--border:#30363d;--radius:10px;--font:'Inter','Segoe UI',system-ui,sans-serif}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;min-height:100vh}
+.top-bar{background:var(--bg2);padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.top-bar .brand{font-weight:700;font-size:14px}
+.top-bar .brand span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.top-bar a{color:var(--cyan);text-decoration:none;font-size:12px;margin-left:auto;padding:4px 8px;background:var(--surface);border-radius:4px}
+.main{max-width:800px;margin:0 auto;padding:20px 16px}
+h1{font-size:24px;color:var(--accent);margin-bottom:16px}
+h2{font-size:18px;color:var(--accent2);margin:24px 0 10px}
+h3{font-size:15px;color:var(--green);margin:16px 0 6px}
+p,li{color:var(--muted);font-size:14px;line-height:1.6}
+ul{padding-left:20px;margin-bottom:12px}
+li{margin-bottom:4px}
+code{background:var(--surface);padding:1px 5px;border-radius:3px;font-size:13px;color:var(--text)}
+.box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin:12px 0}
+.box .icon{font-size:24px;margin-bottom:4px}
+.back{display:inline-block;margin-bottom:16px;color:var(--cyan);text-decoration:none;font-size:13px}
+.back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="brand">❓ <span>LockCMD Guide</span></div>
+  <a href="index.html">Home</a>
+</div>
+
+<div class="main">
+<a href="index.html" class="back">← Back to LockCMD</a>
+<h1>❓ LockCMD Help Guide</h1>
+<p>Plain-English guide for every tool in the Locksmith Command Center. Each tool has a simple step-by-step example.</p>
+
+<h2>📞 Dispatch & Quotes</h2>
+
+<h3>Call Triage & Dispatch</h3>
+<p>Turn a phone call into a ready-to-use job ticket in seconds.</p>
+<div class="box">
+<div class="icon">📞</div>
+<p><strong>What it does:</strong> You pick the call type, property type, address, and urgency. It creates a ticket number you can text to the customer.</p>
+<p><strong>Example:</strong> Customer calls — locked out of their house at 123 Main St. You select "Lockout" + "Residential" + "Emergency". Hit Generate Ticket. It gives you ticket DSP-ABC123. Tap "Send via SMS" to text the customer the ticket right away.</p>
+</div>
+
+<h3>Rekey Quote</h3>
+<p>Quick parts + labor estimate for rekey and master key jobs.</p>
+<div class="box">
+<div class="icon">💰</div>
+<p><strong>What it does:</strong> Enter the number of cylinders, key type, brand, and whether it's high security. It calculates parts + labor and shows the total.</p>
+<p><strong>Example:</strong> Customer with 5 Schlage cylinders wants a master key system. You enter 5, select "Master key system", Schlage, No high security. It returns: $35 parts + $200 labor = $235 total.</p>
+</div>
+
+<h3>Commercial Bid Builder</h3>
+<p>Generate a bid for multi-door commercial jobs.</p>
+<div class="box">
+<div class="icon">📄</div>
+<p><strong>What it does:</strong> Enter the number of entry doors, panic hardware units, storage doors, and key system type. It builds a complete bid with parts and labor.</p>
+<p><strong>Example:</strong> An office needs 3 entry doors, 2 panic bars, and 6 closets all on a grand master key. Enter those numbers, select "Grand master key". It returns a full bid breakdown.</p>
+</div>
+
+<h2>🚗 Automotive</h2>
+
+<h3>Car Lockout Dispatch</h3>
+<p>Get tool recommendations and a dispatch sheet fast.</p>
+<div class="box">
+<div class="icon">🚙</div>
+<p><strong>What it does:</strong> Enter year, make, model, location, and lockout type. It generates a dispatch sheet with suggested tools and an SMS link.</p>
+<p><strong>Example:</strong> 2020 Toyota Camry at 456 Oak Ave, standard lockout. Select year range 2016-2020. It gives you: wedge set, long reach tool, air wedge — and a dispatch SMS to send.</p>
+</div>
+
+<h3>Key & Fob Quote</h3>
+<p>Estimate replacement cost for keys, transponders, fobs, and smart keys.</p>
+<div class="box">
+<div class="icon">🔑</div>
+<p><strong>What it does:</strong> Pick the service type (basic key, transponder, fob, smart key, or combo), quantity, year, and make. It calculates per-unit and total price.</p>
+<p><strong>Example:</strong> Customer needs 2 remote fobs for a 2022 Honda Accord. Select "Remote fob — program", qty 2. It shows $75 each = $150 total including programming.</p>
+</div>
+
+<h3>Ignition Service Guide</h3>
+<p>Diagnose common ignition issues and get repair guidance.</p>
+<div class="box">
+<div class="icon">🔧</div>
+<p><strong>What it does:</strong> Pick the symptom — key won't turn, key stuck, no start, loose switch, or broken key. It shows likely causes and recommended action.</p>
+<p><strong>Example:</strong> "Key won't turn at all" — result says try jiggling wheel and spare key. If no luck, the lock cylinder likely needs replacement. Recommend on-site service.</p>
+</div>
+
+<h2>🔒 Safe Service</h2>
+
+<h3>Safe Service Intake</h3>
+<p>Document every safe job — brand, type, issue, age, and notes.</p>
+<div class="box">
+<div class="icon">🔐</div>
+<p><strong>What it does:</strong> Select safe type, issue, brand, age, and add notes. Generates a reference number (SAFE-XXXX) for tracking. Works for all makes, eras, and types — antique, modern, GSA, everything.</p>
+<p><strong>Example:</strong> Customer has an antique floor safe, dial spins freely, unknown brand. Select "Floor/wall safe", "Dial spins freely", age "Antique". Add notes: "Sargent & Greenleaf dial". Hit Generate Intake. Get reference SAFE-ABC123.</p>
+</div>
+
+<h3>Safe Service Pricing</h3>
+<p>Starting estimates for every safe service you offer.</p>
+<div class="box">
+<div class="icon">💰</div>
+<p><strong>What it does:</strong> Pick the service, access difficulty, and safe class. It returns a starting estimate. <strong>Final price varies by brand, era, mechanism, and on-site assessment.</strong></p>
+<p><strong>Example:</strong> Non-destructive opening, moderate access, commercial TL-rated safe. Starting estimate: ~$450. Note says "Contact for exact quote."</p>
+<p><strong>Services covered:</strong> Opening (non-destructive & destructive), combo changes (dial & digital), dial/keypad replacement, lock repair, digital upgrades, antique restoration, GSA service, warranty repairs, relocker resets.</p>
+</div>
+
+<h2>Need Help?</h2>
+<p>Each tool page has a ❓ link in the top bar back to this guide. If something's unclear, just reach out.</p>
+
+</div>
+</body>
+</html>
