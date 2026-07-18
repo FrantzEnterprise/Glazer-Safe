@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+<title>📞 Dispatch & Quotes — LockCMD</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--bg2:#161b22;--surface:#21262d;--surface2:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#f0883e;--green:#3fb950;--orange:#d29922;--border:#30363d;--radius:10px;--font:'Inter','Segoe UI',system-ui,sans-serif}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;min-height:100vh}
+.top-bar{background:var(--bg2);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.top-bar .brand{font-weight:700;font-size:14px;display:flex;align-items:center;gap:4px}
+.top-bar .brand span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.top-bar a{color:var(--cyan);text-decoration:none;font-size:12px;padding:4px 8px;background:var(--surface);border-radius:4px}
+.top-bar a:hover{background:var(--surface2)}
+.tabs{display:flex;gap:2px;overflow-x:auto;flex:1}
+.tab{padding:6px 14px;border-radius:6px 6px 0 0;cursor:pointer;white-space:nowrap;background:var(--surface);color:var(--muted);font-size:12px;border:1px solid transparent;border-bottom:none;flex-shrink:0}
+.tab.active{background:var(--bg);color:var(--text);border-color:var(--border)}
+.content{max-width:800px;margin:0 auto;padding:16px;display:none}
+.content.active{display:block}
+h2{font-size:18px;color:var(--accent);margin-bottom:4px}
+p{color:var(--muted);font-size:13px;margin-bottom:12px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+label{display:block;color:var(--muted);font-size:12px;margin-bottom:3px;margin-top:8px}
+label:first-child{margin-top:0}
+input,select,textarea{width:100%;background:var(--surface);color:var(--text);border:1px solid var(--border);padding:7px 9px;border-radius:6px;font-size:14px;font-family:var(--font)}
+textarea{resize:vertical;min-height:45px}
+.btn{background:var(--accent);color:var(--bg);border:none;padding:8px 18px;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;margin-top:8px}
+.btn:hover{opacity:.85}
+.btn.green{background:var(--green)}
+.btn.orange{background:var(--orange)}
+.result-box{background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius);padding:12px;margin-top:10px;display:none;white-space:pre-wrap;font-size:13px;line-height:1.5}
+.result-box.show{display:block}
+.copy-btn{background:var(--surface);color:var(--text);border:1px solid var(--border);padding:3px 8px;border-radius:4px;cursor:pointer;font-size:11px;float:right}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row>*{flex:1;min-width:120px}
+@media(max-width:600px){.content{padding:10px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="brand">📞 <span>Dispatch & Quotes</span></div>
+  <a href="../index.html">LockCMD</a>
+  <a href="../help.html">❓</a>
+  <div class="tabs" id="tabBar">
+    <div class="tab active" onclick="switchTab('triage')">📞 Triage</div>
+    <div class="tab" onclick="switchTab('rekey')">🔑 Rekey</div>
+    <div class="tab" onclick="switchTab('bid')">📄 Bid</div>
+  </div>
+</div>
+
+<!-- === TRIAGE === -->
+<div class="content active" id="tab-triage">
+<h2>📞 Call Triage & Dispatch</h2>
+<p>Generate a dispatch-ready job ticket with SMS link.</p>
+<div class="card">
+<div class="row">
+  <div><label>Call type</label><select id="rcType"><option>Lockout</option><option>Rekey</option><option>Install</option><option>Repair</option><option>Master key system</option></select></div>
+  <div><label>Property type</label><select id="rcProp"><option>Residential</option><option>Commercial</option><option>Apartment</option><option>Industrial</option></select></div>
+</div>
+<div class="row">
+  <div><label>Address / cross street</label><input type="text" id="rcAddr" placeholder="123 Main St"></div>
+  <div><label>Urgency</label><select id="rcUrgency"><option value="emergency">🚨 Emergency</option><option value="today">⏰ Today</option><option value="schedule">📅 Schedule</option></select></div>
+</div>
+<div><label>Notes</label><textarea id="rcNotes" placeholder="Deadbolt won't turn, door is open"></textarea></div>
+<button class="btn" onclick="genTicket()">⚡ Generate Ticket</button>
+<div class="result-box" id="rcResult"></div>
+</div>
+</div>
+
+<!-- === REKEY === -->
+<div class="content" id="tab-rekey">
+<h2>🔑 Rekey / Master Key Quote</h2>
+<p>Quick estimate for rekey and master key systems.</p>
+<div class="card">
+<div class="row">
+  <div><label>Cylinders / doors</label><input type="number" id="rcCyl" value="3" min="1"></div>
+  <div><label>Key type</label><select id="rcKeyType"><option>Rekey (same key)</option><option>Rekey (different)</option><option>Master key system</option></select></div>
+</div>
+<div class="row">
+  <div><label>Brand</label><select id="rcBrand"><option>Schlage</option><option>Kwikset</option><option>Yale</option><option>Medeco</option><option>Other</option></select></div>
+  <div><label>High security?</label><select id="rcHighSec"><option value="no">No</option><option value="yes">Yes</option></select></div>
+</div>
+<button class="btn" onclick="genRekey()">💰 Generate Quote</button>
+<div class="result-box" id="rcQuoteResult"></div>
+</div>
+</div>
+
+<!-- === BID === -->
+<div class="content" id="tab-bid">
+<h2>📄 Commercial Bid Builder</h2>
+<p>Quick bid for multi-door commercial jobs.</p>
+<div class="card">
+<div class="row">
+  <div><label>Entry doors</label><input type="number" id="rcEntry" value="2" min="0"></div>
+  <div><label>Panic hardware</label><input type="number" id="rcPanic" value="1" min="0"></div>
+</div>
+<div class="row">
+  <div><label>Storage / closet</label><input type="number" id="rcStorage" value="4" min="0"></div>
+  <div><label>Key system</label><select id="rcKeySys"><option>Grand master key</option><option>Master key</option><option>All keyed alike</option><option>All different</option></select></div>
+</div>
+<button class="btn" onclick="genBid()">📄 Generate Bid</button>
+<div class="result-box" id="rcBidResult"></div>
+</div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'))
+  document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'))
+  event.target.classList.add('active')
+  document.getElementById('tab-'+id).classList.add('active')
+}
+
+function show(id,html){
+  document.getElementById(id).innerHTML=html
+  document.getElementById(id).classList.add('show')
+}
+
+function genTicket(){
+  var t=document.getElementById('rcType').value
+  var p=document.getElementById('rcProp').value
+  var a=document.getElementById('rcAddr').value||'[Address needed]'
+  var u=document.getElementById('rcUrgency').value
+  var n=document.getElementById('rcNotes').value||'None'
+  var ul={emergency:'🚨 EMERGENCY',today:'⏰ Today',schedule:'📅 Scheduled'}
+  var ref='DSP-'+Date.now().toString(36).toUpperCase()
+  show('rcResult',
+    '<button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById(\'rcResult\').innerText)">📋 Copy</button>'+
+    '<strong>📋 '+ref+'</strong><br><br>'+
+    'Type: '+t+' ('+p+')<br>Address: '+a+'<br>Urgency: '+ul[u]+'<br>Notes: '+n+'<br><br>'+
+    '<a href="sms:&body='+encodeURIComponent(ref+' - '+t+' - '+a+' - '+ul[u])+'" style="color:var(--cyan)">📱 Send via SMS</a>')
+}
+
+function genRekey(){
+  var c=parseInt(document.getElementById('rcCyl').value)||3
+  var k=document.getElementById('rcKeyType').value
+  var b=document.getElementById('rcBrand').value
+  var h=document.getElementById('rcHighSec').value
+  var labor=k.includes('Master')?40*c:22*c
+  var parts=k.includes('Master')?7*c:4*c
+  if(h==='yes'){parts*=2;labor+=15*c}
+  show('rcQuoteResult','<strong>💰 Rekey Quote</strong><br><br>Cylinders: '+c+' ('+b+(h==='yes'?' HS':'')+')<br>Parts: $'+parts+'<br>Labor: $'+labor+'<br><strong style="color:var(--green);font-size:16px">Total: $'+(parts+labor)+'</strong>')
+}
+
+function genBid(){
+  var e=parseInt(document.getElementById('rcEntry').value)||2
+  var pn=parseInt(document.getElementById('rcPanic').value)||1
+  var s=parseInt(document.getElementById('rcStorage').value)||4
+  var k=document.getElementById('rcKeySys').value
+  var td=e+pn+s
+  var parts=td*10+pn*40
+  var labor=td*30+pn*50
+  show('rcBidResult','<strong>📄 Commercial Bid</strong><br><br>Entry: '+e+' | Panic: '+pn+' | Storage: '+s+'<br>Key system: '+k+'<br>Total cylinders: '+td+'<br>Parts: $'+parts+'<br>Labor: $'+labor+'<br><strong style="color:var(--green);font-size:16px">Bid Total: $'+(parts+labor)+'</strong><br><span style="font-size:11px;color:var(--muted)">Excludes access control, wiring, after-hours surcharges.</span>')
+}
+
+// Hash nav
+var h=location.hash.replace('#','')
+if(h){var m={'quote':'rekey','bid':'bid'};var t=m[h]||h;if(document.getElementById('tab-'+t)){switchTab(t)}}
+</script>
+</body>
+</html>
