@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+<title>🔒 Safe Service — LockCMD</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--bg2:#161b22;--surface:#21262d;--surface2:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#f0883e;--green:#3fb950;--orange:#d29922;--border:#30363d;--radius:10px;--font:'Inter','Segoe UI',system-ui,sans-serif}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;min-height:100vh}
+.top-bar{background:var(--bg2);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.top-bar .brand{font-weight:700;font-size:14px;display:flex;align-items:center;gap:4px}
+.top-bar .brand span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.top-bar a{color:var(--cyan);text-decoration:none;font-size:12px;padding:4px 8px;background:var(--surface);border-radius:4px}
+.top-bar a:hover{background:var(--surface2)}
+.tabs{display:flex;gap:2px;overflow-x:auto;flex:1}
+.tab{padding:6px 14px;border-radius:6px 6px 0 0;cursor:pointer;white-space:nowrap;background:var(--surface);color:var(--muted);font-size:12px;border:1px solid transparent;border-bottom:none;flex-shrink:0}
+.tab.active{background:var(--bg);color:var(--text);border-color:var(--border)}
+.content{max-width:800px;margin:0 auto;padding:16px;display:none}
+.content.active{display:block}
+h2{font-size:18px;color:var(--accent);margin-bottom:4px}
+p{color:var(--muted);font-size:13px;margin-bottom:12px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+label{display:block;color:var(--muted);font-size:12px;margin-bottom:3px;margin-top:8px}
+label:first-child{margin-top:0}
+input,select,textarea{width:100%;background:var(--surface);color:var(--text);border:1px solid var(--border);padding:7px 9px;border-radius:6px;font-size:13px;font-family:var(--font)}
+textarea{resize:vertical;min-height:45px}
+.btn{background:var(--accent);color:var(--bg);border:none;padding:8px 18px;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;margin-top:8px}
+.btn:hover{opacity:.85}
+.btn.green{background:var(--green)}
+.btn.orange{background:var(--orange)}
+.result-box{background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius);padding:12px;margin-top:10px;display:none;white-space:pre-wrap;font-size:13px;line-height:1.5}
+.result-box.show{display:block}
+.copy-btn{background:var(--surface);color:var(--text);border:1px solid var(--border);padding:3px 8px;border-radius:4px;cursor:pointer;font-size:11px;float:right}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row>*{flex:1;min-width:120px}
+.note{background:var(--surface);border-left:3px solid var(--orange);padding:8px 12px;font-size:12px;color:var(--muted);margin:10px 0;border-radius:0 6px 6px 0}
+@media(max-width:600px){.content{padding:10px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="brand">🔒 <span>Safe Service</span></div>
+  <a href="../index.html">LockCMD</a>
+  <a href="../help.html">❓</a>
+  <div class="tabs" id="tabBar">
+    <div class="tab active" onclick="switchTab('intake')">📝 Intake</div>
+    <div class="tab" onclick="switchTab('pricing')">💰 Pricing</div>
+  </div>
+</div>
+
+<!-- === INTAKE === -->
+<div class="content active" id="tab-intake">
+<h2>📝 Safe Service Intake</h2>
+<p>Collect customer details for accurate assessment. Works on all makes, eras, and types — antique to modern.</p>
+<div class="card">
+<div class="row">
+  <div><label>Safe type</label><select id="sfType">
+    <option>Home / gun safe</option>
+    <option>Commercial / office</option>
+    <option>TL / TRTL rated</option>
+    <option>GSA container</option>
+    <option>Antique / vintage</option>
+    <option>Floor / wall safe</option>
+    <option>Jewelry / chest</option>
+  </select></div>
+  <div><label>Issue</label><select id="sfIssue">
+    <option>Won't open — locked out</option>
+    <option>Dial spins freely</option>
+    <option>Digital keypad dead</option>
+    <option>Won't lock / bolt issue</option>
+    <option>Combo forgotten</option>
+    <option>Handle loose / broken</option>
+    <option>Relocker triggered</option>
+  </select></div>
+</div>
+<div class="row">
+  <div><label>Brand</label><input type="text" id="sfBrand" placeholder="AMSEC, Gardall, Liberty, etc."></div>
+  <div><label>Age</label><select id="sfAge">
+    <option>New (0-5 years)</option>
+    <option>Modern (5-20 years)</option>
+    <option>Vintage (20-50 years)</option>
+    <option>Antique (50+ years)</option>
+    <option>Unknown</option>
+  </select></div>
+</div>
+<div><label>Notes (model, serial, photos available, location)</label><textarea id="sfNotes" placeholder="Sargent &amp; Greenleaf dial, serial on back"></textarea></div>
+<button class="btn" onclick="genIntake()">📋 Generate Intake</button>
+<div class="result-box" id="sfResult"></div>
+</div>
+<div class="note">
+  <strong>Note:</strong> Pricing varies by brand, era, mechanism, and condition. Use the Pricing tab for starting estimates.
+</div>
+</div>
+
+<!-- === PRICING === -->
+<div class="content" id="tab-pricing">
+<h2>💰 Safe Service Pricing</h2>
+<p>Starting estimates based on service type. Final quote depends on on-site assessment — contact for exact pricing.</p>
+<div class="card">
+<div><label>Service needed</label><select id="sfPriceService">
+  <option>Non-destructive opening</option>
+  <option>Destructive opening (drill/cut)</option>
+  <option>Combination change — dial</option>
+  <option>Combination change — digital</option>
+  <option>Dial replacement</option>
+  <option>Digital keypad replacement</option>
+  <option>Lock repair / service</option>
+  <option>Dial → digital upgrade</option>
+  <option>Antique restoration (assessment req.)</option>
+  <option>GSA container service</option>
+  <option>Warranty repair (mfr authorized)</option>
+  <option>Relocker reset / repair</option>
+</select></div>
+<div class="row">
+  <div><label>Access difficulty</label><select id="sfDifficulty">
+    <option value="easy">Easy — accessible, standard</option>
+    <option value="moderate">Moderate — tight space</option>
+    <option value="hard">Hard — bolted down, limited access</option>
+  </select></div>
+  <div><label>Safe class</label><select id="sfClass">
+    <option value="std">Standard residential</option>
+    <option value="comm">Commercial / TL rated</option>
+    <option value="gsa">GSA / high-security</option>
+  </select></div>
+</div>
+<button class="btn" onclick="genPrice()">💰 Estimate</button>
+<div class="result-box" id="sfPriceResult"></div>
+</div>
+<div class="note">
+  <strong>Specializing in:</strong> On-site safe opening, repairs, combo changes, dial & digital replacement, upgrades, GSA containers, warranty repair for major brands. Antique and modern — all makes and models.
+</div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'))
+  document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'))
+  event.target.classList.add('active')
+  document.getElementById('tab-'+id).classList.add('active')
+}
+
+function show(id,html){
+  document.getElementById(id).innerHTML=html
+  document.getElementById(id).classList.add('show')
+}
+
+function genIntake(){
+  var st=document.getElementById('sfType').value
+  var si=document.getElementById('sfIssue').value
+  var sb=document.getElementById('sfBrand').value||'Unknown'
+  var sa=document.getElementById('sfAge').value
+  var sn=document.getElementById('sfNotes').value||'None'
+  var ref='SAFE-'+Date.now().toString(36).toUpperCase()
+  show('sfResult',
+    '<strong>🔒 Safe Intake — '+ref+'</strong><br><br>'+
+    'Type: '+st+'<br>Issue: '+si+'<br>Brand: '+sb+'<br>Age: '+sa+'<br>Notes: '+sn+'<br><br>'+
+    '<span style="font-size:12px;color:var(--muted)">✅ Saved. Provide this reference to the customer.</span>')
+}
+
+function genPrice(){
+  var svc=document.getElementById('sfPriceService').value
+  var diff=document.getElementById('sfDifficulty').value
+  var cls=document.getElementById('sfClass').value
+  var base=[250,450,150,120,300,200,200,350,500,400,150,200]
+  var si=['Non-destructive opening','Destructive opening (drill/cut)','Combination change — dial',
+    'Combination change — digital','Dial replacement','Digital keypad replacement',
+    'Lock repair / service','Dial → digital upgrade','Antique restoration (assessment req.)',
+    'GSA container service','Warranty repair (mfr authorized)','Relocker reset / repair'].indexOf(svc)
+  var p=si>=0?base[si]||250:250
+  if(diff==='moderate')p*=1.3
+  if(diff==='hard')p*=1.6
+  if(cls==='comm')p*=1.4
+  if(cls==='gsa')p*=1.8
+  p=Math.round(p)
+  show('sfPriceResult',
+    '<strong>💰 Safe Service Estimate</strong><br><br>'+
+    'Service: '+svc+'<br>Access: '+diff+'<br>Class: '+cls+'<br>'+
+    '<strong style="color:var(--green);font-size:18px">Starting at: $'+p+'</strong><br><br>'+
+    '<span style="font-size:11px;color:var(--muted)">Final price varies by brand, era, mechanism, and on-site assessment. Contact for exact quote.</span>')
+}
+</script>
+</body>
+</html>
