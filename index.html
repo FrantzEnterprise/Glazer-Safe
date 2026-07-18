@@ -1,870 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.emailjs.com; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glazer Safe and Lock | Locksmith & Safe Opening Sacramento | West Sacramento Safe Repair</title>
-  <meta name="description" content="Glazer Safe and Lock — West Sacramento's trusted safe opening, lock repair, and emergency safe service specialist. Serving Sacramento and surrounding cities. Call (916) 996-9492.">
-  <meta name="keywords" content="safe opening Sacramento, locksmith West Sacramento, safe repair, combination lock change, emergency safe service, Glazer Safe and Lock, lockout service, safe technician Sacramento">
-  <meta name="author" content="Glazer Safe and Lock">
-  <meta name="geo.region" content="US-CA">
-  <meta name="geo.placename" content="West Sacramento">
-  <meta name="geo.position" content="38.5805;-121.5302">
-  <meta name="ICBM" content="38.5805, -121.5302">
-  <meta property="og:title" content="Glazer Safe and Lock | Expert Safe Opening & Repair">
-  <meta property="og:description" content="Professional safe opening, lock repair, and emergency service in West Sacramento and the Sacramento region.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://glazersafeandlock.com">
-  <meta property="og:locale" content="en_US">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Glazer Safe and Lock","telephone":"+1-916-996-9492","address":{"@type":"PostalAddress","addressLocality":"West Sacramento","addressRegion":"CA","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.5805,"longitude":-121.5302},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"23:59"}],"areaServed":["Sacramento","West Sacramento","Citrus Heights","Roseville","Elk Grove","Folsom","Carmichael","Rancho Cordova","Davis","Woodland"],"description":"Safe opening, lock repair, combination changes, and emergency safe service for residential and commercial clients.","url":"https://glazersafeandlock.com","priceRange":"$$"}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#fafafc;line-height:1.7;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    ul{list-style:none}
-    .container{max-width:1200px;margin:0 auto;padding:0 24px}
-
-    .navbar{position:fixed;top:0;left:0;right:0;background:rgba(15,23,42,0.97);backdrop-filter:blur(8px);z-index:1000;padding:14px 0;border-bottom:1px solid rgba(200,150,46,0.2)}
-    .navbar .container{display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.5px}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-    .nav-logo span{color:#c8962e}
-    .nav-links{display:flex;align-items:center;gap:32px}
-    .nav-links a{color:rgba(255,255,255,0.85);font-size:.95rem;font-weight:500;transition:color .2s;position:relative}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#c8962e;transform:scaleX(0);transition:transform .2s}
-    .nav-links a:hover{color:#fff}
-    .nav-links a:hover::after{transform:scaleX(1)}
-    .nav-cta{background:#c8962e;color:#0f172a!important;padding:10px 24px;border-radius:6px;font-weight:600}
-    .nav-cta::after{display:none!important}
-    .nav-cta:hover{background:#dba73b;color:#0f172a!important}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-    .hamburger span{display:block;width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
-
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#0f172a 100%);position:relative;overflow:hidden;padding:120px 0 80px}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(200,150,46,0.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(30,58,95,0.4) 0%,transparent 50%);pointer-events:none}
-    .hero-content::before{content:'';position:absolute;inset:0;border-radius:20px;background:url('hero-mr-glazer.jpg') center/cover no-repeat;opacity:0.80;z-index:-1}
-    .hero-content::after{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,rgba(15,23,42,0.5),rgba(30,58,95,0.4));z-index:-1}
-    .hero-badge,.hero h1,.hero p,.hero-buttons{position:relative;z-index:2}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
-    .hero-content{max-width:580px;position:relative;border-radius:20px;min-height:420px;display:flex;flex-direction:column;justify-content:center;padding:40px}
-    .hero-badge{display:inline-block;background:rgba(200,150,46,0.15);color:#c8962e;padding:6px 16px;border-radius:100px;font-size:.85rem;font-weight:600;letter-spacing:.5px;margin-bottom:20px;border:1px solid rgba(200,150,46,0.3)}
-    .hero h1{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:#fff;line-height:1.15;margin-bottom:20px}
-    .blog-preview{background:#fff;padding:80px 0}
-    .blog-preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:860px;margin:0 auto}
-    .blog-preview-card{background:#f8f7f4;border-radius:16px;padding:28px 24px;transition:all .3s;border:1px solid transparent}
-    .blog-preview-card:hover{border-color:rgba(200,150,46,0.3);transform:translateY(-3px);box-shadow:0 8px 30px rgba(15,23,42,0.06)}
-    .blog-preview-meta{display:flex;gap:12px;font-size:.8rem;color:#6a6a8a;margin-bottom:8px;flex-wrap:wrap}
-    .blog-preview-meta .cat{background:rgba(200,150,46,0.1);color:#c8962e;padding:1px 10px;border-radius:100px;font-weight:600;font-size:.7rem}
-    .blog-preview-card h3{font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:8px;line-height:1.3}
-    .blog-preview-card h3 a{color:#0f172a;transition:color .2s}
-    .blog-preview-card h3 a:hover{color:#c8962e}
-    .blog-preview-card p{color:#4a4a6a;font-size:.88rem;margin-bottom:0}
-    @media(max-width:768px){.blog-preview-grid{grid-template-columns:1fr}}
-    .hero h1 span{color:#c8962e}
-    .hero p{font-size:1.15rem;color:rgba(255,255,255,0.75);margin-bottom:36px;max-width:500px}
-    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
-    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#c8962e;color:#0f172a;padding:16px 36px;border-radius:8px;font-size:1.05rem;font-weight:700;transition:all .2s;border:none;cursor:pointer}
-    .btn-primary:hover{background:#dba73b;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,150,46,0.3)}
-    .btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;padding:16px 36px;border-radius:8px;font-size:1.05rem;font-weight:600;border:2px solid rgba(255,255,255,0.3);transition:all .2s}
-    .btn-secondary:hover{border-color:#c8962e;color:#c8962e}
-    .hero-visual{display:flex;justify-content:center;align-items:center}
-    .hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:48px 40px;backdrop-filter:blur(12px);width:100%;max-width:440px}
-    .hero-card-icon{width:72px;height:72px;background:rgba(200,150,46,0.12);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-    .hero-card-icon i{font-size:2rem;color:#c8962e}
-    .hero-card h3{color:#fff;font-size:1.3rem;font-weight:600;margin-bottom:8px}
-    .hero-card p{color:rgba(255,255,255,0.6);font-size:.95rem;margin-bottom:20px}
-    .hero-card .phone-link{display:inline-flex;align-items:center;gap:8px;color:#c8962e;font-size:1.3rem;font-weight:700;transition:color .2s}
-    .hero-card .phone-link:hover{color:#dba73b}
-    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08)}
-    .hero-stat{text-align:center}
-    .hero-stat .num{color:#fff;font-size:1.5rem;font-weight:700}
-    .hero-stat .label{color:rgba(255,255,255,0.5);font-size:.8rem}
-    .hero-license-badge{color:#fff;font-size:.8rem;font-weight:600;margin-bottom:12px;letter-spacing:.3px}
-
-    section{padding:100px 0}
-    .section-header{text-align:center;max-width:680px;margin:0 auto 60px}
-    .section-tag{display:inline-block;color:#c8962e;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-    .section-header h2{font-family:'Playfair Display',serif;font-size:2.6rem;color:#0f172a;line-height:1.2;margin-bottom:16px}
-    .section-header p{color:#4a4a6a;font-size:1.1rem}
-
-    #services{background:#fff}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .service-card{background:#f8f7f4;border-radius:16px;padding:36px 28px;transition:all .3s;border:1px solid transparent}
-    .service-card:hover{border-color:rgba(200,150,46,0.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,23,42,0.08)}
-    .service-icon{width:56px;height:56px;background:rgba(200,150,46,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-    .service-icon i{font-size:1.5rem;color:#c8962e}
-    .service-card h3{font-size:1.2rem;font-weight:700;margin-bottom:10px;color:#0f172a}
-    .service-card p{color:#4a4a6a;font-size:.95rem}
-
-    #about{background:#f8f7f4}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .about-content h2{font-family:'Playfair Display',serif;font-size:2.4rem;color:#0f172a;line-height:1.2;margin-bottom:20px}
-    .about-content p{color:#4a4a6a;margin-bottom:16px}
-    .about-features{margin-top:24px}
-    .about-features li{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:.95rem;color:#1a1a2e}
-    .about-features li i{color:#c8962e;margin-top:3px}
-    .about-placeholder{background:linear-gradient(rgba(15,23,42,0.6),rgba(15,23,42,0.6)),url('bg-about.jpg') center/cover no-repeat;border-radius:16px;padding:60px 40px;text-align:center;color:#fff;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .about-placeholder i{font-size:3rem;color:#c8962e;margin-bottom:20px}
-    .about-placeholder h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:8px}
-    .about-placeholder p{color:rgba(255,255,255,0.7);font-size:.95rem}
-
-    #why-us{background:#fff}
-    .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .feature-item{text-align:center;padding:32px 20px;border-radius:16px;transition:all .3s;background:#f8f7f4}
-    .feature-item:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(15,23,42,0.06)}
-    .feature-item i{font-size:2rem;color:#c8962e;margin-bottom:16px}
-    .feature-item h4{font-size:1.05rem;font-weight:700;color:#0f172a;margin-bottom:8px}
-    .feature-item p{color:#4a4a6a;font-size:.9rem}
-
-    #gallery{background:#f8f7f4}
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-    .gallery-item{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(15,23,42,0.06);transition:transform .3s,box-shadow .3s}
-    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,23,42,0.12)}
-    .gallery-item .img-wrap{aspect-ratio:4/3;overflow:hidden}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-    .gallery-item:hover img{transform:scale(1.05)}
-    .gallery-cap{background:#0f172a;color:#c8962e;padding:12px 14px;font-size:.85rem;font-weight:600;text-align:center}
-    #pricing{background:#fff}
-    .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .pricing-card{background:#f8f7f4;border-radius:16px;padding:36px 24px 28px;text-align:center;border:1px solid transparent;transition:all .3s;position:relative}
-    .pricing-card:hover{border-color:rgba(200,150,46,0.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,23,42,0.08)}
-    .pricing-card.pricing-featured{border-color:rgba(200,150,46,0.3);background:#fff;box-shadow:0 4px 20px rgba(200,150,46,0.1)}
-    .pricing-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#c8962e;color:#0f172a;padding:4px 18px;border-radius:100px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-    .pricing-icon{width:56px;height:56px;background:rgba(200,150,46,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-    .pricing-icon i{font-size:1.5rem;color:#c8962e}
-    .pricing-card h3{font-size:1rem;font-weight:700;color:#0f172a;margin-bottom:8px}
-    .pricing-amount{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#0f172a;line-height:1.1}
-    .pricing-note{color:#4a4a6a;font-size:.8rem;margin-bottom:12px}
-    .pricing-card p{color:#4a4a6a;font-size:.9rem}
-    .pricing-disclaimer{text-align:center;margin-top:36px;padding:16px 24px;background:#f8f7f4;border-radius:12px;color:#4a4a6a;font-size:.95rem}
-    .pricing-disclaimer i{color:#c8962e;margin-right:8px}
-    .pricing-disclaimer a{color:#c8962e;font-weight:700}
-    .pricing-disclaimer a:hover{color:#dba73b}
-
-    #areas{background:#f8f7f4}
-    .areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .area-chip{background:#fff;padding:18px 16px;border-radius:10px;text-align:center;font-weight:600;font-size:.95rem;border:1px solid #e8e6e0;transition:all .2s}
-    .area-chip:hover{border-color:#c8962e;color:#c8962e}
-
-    .emergency-banner{background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:80px 0;text-align:center}
-    .emergency-banner h2{font-family:'Playfair Display',serif;font-size:2.4rem;color:#fff;margin-bottom:12px}
-    .emergency-banner p{color:rgba(255,255,255,0.7);font-size:1.1rem;margin-bottom:32px}
-    .emergency-phone{font-size:2.2rem;font-weight:800;color:#c8962e;letter-spacing:1px}
-    .emergency-phone:hover{color:#dba73b}
-
-    #testimonials{background:#fff}
-    .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .testimonial-card{background:#f8f7f4;padding:32px 28px;border-radius:16px;border:1px solid transparent;transition:all .2s}
-    .testimonial-card:hover{border-color:rgba(200,150,46,0.2)}
-    .testimonial-stars{color:#c8962e;margin-bottom:12px}
-    .testimonial-card p{color:#4a4a6a;font-size:.95rem;font-style:italic;margin-bottom:16px}
-    .testimonial-author{font-weight:600;color:#0f172a;font-size:.95rem}
-
-    #contact{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);padding:100px 0}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-    .contact-info h2{font-family:'Playfair Display',serif;font-size:2.4rem;color:#fff;margin-bottom:20px}
-    .contact-info p{color:rgba(255,255,255,0.7);margin-bottom:32px}
-    .contact-detail{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-    .contact-detail i{width:48px;height:48px;background:rgba(200,150,46,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#c8962e;font-size:1.2rem}
-    .contact-detail .label{color:rgba(255,255,255,0.5);font-size:.85rem}
-    .contact-detail .value{color:#fff;font-weight:600;font-size:1.05rem}
-    .contact-detail .value a{color:#c8962e}
-    .contact-detail .value a:hover{color:#dba73b}
-    .contact-form{background:#fff;padding:40px;border-radius:16px}
-    .contact-form h3{font-size:1.3rem;margin-bottom:20px;color:#0f172a}
-    .form-group{margin-bottom:16px}
-    .form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 16px;border:1px solid #d4d2cc;border-radius:8px;font-family:'Inter',sans-serif;font-size:.95rem;background:#f8f7f4;transition:border-color .2s}
-    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:#c8962e}
-    .form-group textarea{resize:vertical;min-height:120px}
-    .form-group select{appearance:auto}
-    .btn-submit{width:100%;padding:16px;background:#c8962e;color:#0f172a;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
-    .btn-submit:hover{background:#dba73b}
-
-    footer{background:#0a0f1a;padding:40px 0;border-top:1px solid rgba(200,150,46,0.1)}
-    footer .container{display:flex;justify-content:space-between;align-items:center}
-    footer .copy{color:rgba(255,255,255,0.5);font-size:.9rem}
-    footer .copy span{color:#c8962e}
-    footer .copy a{color:#c8962e}
-    footer .copy a:hover{color:#dba73b}
-
-    @media(max-width:1024px){.hero-grid{gap:40px}.hero h1{font-size:2.8rem}.services-grid{grid-template-columns:repeat(2,1fr)}.features-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:repeat(2,1fr)}.areas-grid{grid-template-columns:repeat(3,1fr)}.testimonials-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#0f172a;padding:20px 24px;border-bottom:1px solid rgba(200,150,46,0.2)}.nav-links.active{display:flex}.hamburger{display:flex}.hero-grid{grid-template-columns:1fr;text-align:center}.hero-content{max-width:100%}.hero p{margin:0 auto 36px}.hero-buttons{justify-content:center}.hero h1{font-size:2.3rem}.hero-card{max-width:100%}.about-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr}.areas-grid{grid-template-columns:repeat(2,1fr)}.testimonials-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.emergency-phone{font-size:1.6rem}footer .container{flex-direction:column;gap:12px;text-align:center}section{padding:60px 0}.section-header h2{font-size:2rem}}
-@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
-    @media(max-width:480px){.hero h1{font-size:1.9rem}.areas-grid{grid-template-columns:1fr 1fr}.contact-form{padding:24px}}
-    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-    .hamburger.active span:nth-child(2){opacity:0}
-    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    a:focus-visible,.btn-submit:focus-visible,.glz-btn:focus-visible,.glz-snd:focus-visible,.glz-upb:focus-visible,.glz-cl:focus-visible,.glz-sc:focus-visible,#cookie-accept:focus-visible,#cookie-decline:focus-visible,.hamburger:focus-visible{outline:2px solid #c8962e;outline-offset:2px}
-    .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:#c8962e;color:#0f172a;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:700;z-index:10000;transition:top .2s}
-    .skip-link:focus{top:0}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+<title>LockCMD — Locksmith Command Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--bg2:#161b22;--surface:#21262d;--surface2:#30363d;--text:#e6edf3;--text2:#58a6ff;--muted:#8b949e;--accent:#58a6ff;--accent2:#f0883e;--green:#3fb950;--orange:#d29922;--red:#f85149;--gold:#e3b341;--cyan:#79c0ff;--border:#30363d;--radius:10px;--font:'Inter','Segoe UI',system-ui,sans-serif}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;min-height:100vh}
+header{background:var(--bg2);border-bottom:1px solid var(--border);padding:20px 16px 14px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+header h1{font-size:22px;display:flex;align-items:center;gap:8px}
+header h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+header .sub{color:var(--muted);font-size:13px;margin-top:2px;width:100%}
+header nav{display:flex;gap:8px;margin-left:auto}
+header nav a{color:var(--cyan);text-decoration:none;font-size:13px;padding:4px 10px;border-radius:4px;background:var(--surface)}
+header nav a:hover{background:var(--surface2)}
+.main{max-width:1100px;margin:0 auto;padding:20px 16px}
+.section-title{font-size:20px;color:var(--accent2);margin:24px 0 14px;display:flex;align-items:center;gap:8px}
+.section-title:first-child{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all .2s;position:relative}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(88,166,255,.1)}
+.card .icon{font-size:28px;margin-bottom:6px}
+.card h3{font-size:15px;margin-bottom:4px}
+.card p{color:var(--muted);font-size:12px;line-height:1.4}
+.card .badge{position:absolute;top:10px;right:10px;background:var(--accent);color:var(--bg);font-size:9px;padding:2px 8px;border-radius:10px;font-weight:600}
+.card .badge.orange{background:var(--accent2)}
+.card .badge.green{background:var(--green)}
+.card .badge.purple{background:#bc8cff;color:#000}
+.hero{text-align:center;padding:40px 16px;background:linear-gradient(180deg,var(--bg2),transparent);border-radius:var(--radius);margin-bottom:20px}
+.hero h2{font-size:28px;margin-bottom:8px}
+.hero p{color:var(--muted);font-size:15px;max-width:600px;margin:0 auto 16px}
+.hero .tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero .tags span{background:var(--surface);padding:4px 12px;border-radius:20px;font-size:12px;color:var(--muted)}
+footer{text-align:center;padding:20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:600px){
+  header{padding:14px 12px 10px}
+  header h1{font-size:18px}
+  .cards{grid-template-columns:1fr}
+  .hero h2{font-size:22px}
+  .hero{padding:24px 12px}
+}
+</style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav class="navbar" aria-label="Main navigation">
-  <div class="container">
-    <a href="#home" class="nav-logo">Glazer<span>Safe</span>&amp;Lock</a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#why-us">Why Us</a></li>
-      <li><a href="#gallery">Our Work</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="#areas">Service Area</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+<header>
+<div class="header-inner">
+  <h1>🔧 <span>LockCMD</span></h1>
+  <div class="sub">Locksmith Command Center — dispatch, quotes, diagnostics & safe service in one place</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="help.html">❓ Guide</a>
+  </nav>
+</div>
+</header>
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <div class="hero-badge"><i aria-hidden="true" class="fas fa-location-dot"></i> West Sacramento, CA</div>
-      <h1>Trusted <span>Safe Opening</span> &amp; Lock Expert</h1>
-      <p>Professional safe opening, lock repair, and emergency service for Sacramento and surrounding cities. Precision work you can count on.</p>
-      <div class="hero-buttons">
-        <a href="tel:+19169969492" class="btn-primary"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a>
-        <a href="#contact" class="btn-secondary">Request Service <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-card-icon"><i aria-hidden="true" class="fas fa-shield-halved"></i></div>
-        <h3>Emergency Safe Service</h3>
-        <div class="hero-license-badge">CA DCA, BSIS Lic # LCO 8404</div>
-        <p>Locked out of your safe? We respond fast — residential, commercial, and antique safes.</p>
-        <a href="tel:+19169969492" class="phone-link"><i aria-hidden="true" class="fas fa-phone-alt"></i> (916) 996-9492</a>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="num">8+</div><div class="label">Years Exp</div></div>
-          <div class="hero-stat"><div class="num">800+</div><div class="label">Safes Opened</div></div>
-          <div class="hero-stat"><div class="num">5.0★</div><div class="label">Service</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="main">
 
-<section id="services" tabindex="-1">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">What We Do</div>
-      <h2>Professional Safe &amp; Lock Services</h2>
-      <p>From emergency safe openings to routine lock maintenance — we handle it all with precision and care.</p>
-    </div>
-    <div class="services-grid" role="list" aria-label="Services offered">
-      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-unlock-keyhole"></i></div><h3>Safe Opening</h3><p>Non-destructive safe opening for combination, digital, and key-lock safes. We get you in without damaging your safe.</p></div>
-      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-tools"></i></div><h3>Safe Repair</h3><p>Broken handle, stuck bolt, malfunctioning lock — we diagnose and repair all safe types and brands.</p></div>
-      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-key-skeleton"></i></div><h3>Combination Change</h3><p>Need your safe combination changed? We re-key and reset combinations for maximum security.</p></div>
-      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-clock"></i></div><h3>Emergency Service</h3><p>Locked out and need access fast? Our emergency safe service gets you back in quickly and safely.</p></div>
-      <div class="service-card" role="listitem"><div class="service-icon"><i aria-hidden="true" class="fas fa-screwdriver-wrench"></i></div><h3>Lock Installation &amp; Repair</h3><p>Professional lock installation, repair, and replacement for residential and commercial properties.</p></div>
-      <div class="service-card"><div class="service-icon"><i aria-hidden="true" class="fas fa-chess-rook"></i></div><h3>Antique &amp; Vintage Safes</h3><p>Specialized care for antique and vintage safes. We respect the craftsmanship while solving modern access problems.</p></div>
-    </div>
+<div class="hero">
+  <h2>⚡ Everything a Locksmith Needs</h2>
+  <p>Quick-action tools for residential, commercial, automotive, and safe service. Built for the road — works on any device.</p>
+  <div class="tags">
+    <span>🏠 Resi/Comm</span>
+    <span>🚗 Automotive</span>
+    <span>🔒 Safe Service</span>
+    <span>📋 Dispatch</span>
+    <span>💰 Quotes</span>
   </div>
-</section>
+</div>
 
-<section id="about">
-  <div class="container about-grid">
-    <div class="about-content">
-      <div class="section-tag">About Us</div>
-      <h2>Sacramento's Safe Opening Specialist</h2>
-      <p>Glazer Safe and Lock is a West Sacramento-based safe and lock service company dedicated to providing expert, reliable, and professional safe opening and repair services throughout the Sacramento region.</p>
-      <p>With over 8 years of hands-on experience, more than 800 safes opened, and a perfect 5.0-star rating, Mr. Glazer brings precision, patience, and a deep respect for your property to every job. He starts with an accurate diagnosis, focuses on the target issue, then opens and repairs with care — from modern electronic models to antique mechanical vaults.</p>
-      <ul class="about-features">
-        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Licensed &amp; insured professional service</li>
-        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Non-destructive techniques preferred</li>
-        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Transparent pricing — no hidden fees</li>
-        <li><i aria-hidden="true" class="fas fa-circle-check"></i> Same-day service available</li>
-      </ul>
-    </div>
-    <div class="about-visual">
-      <div class="about-placeholder"><i aria-hidden="true" class="fas fa-vault"></i><h3>Glazer Safe and Lock</h3><p>Your trusted safe technician serving Sacramento and beyond.</p></div>
-    </div>
+<h2 class="section-title">🏠 Residential & Commercial</h2>
+<div class="cards">
+  <div class="card" onclick="location.href='tools/dispatch.html'" title="Start a new dispatch">
+    <div class="badge green">New</div>
+    <div class="icon">📞</div>
+    <h3>Call Triage & Dispatch</h3>
+    <p>Generate a dispatch-ready job ticket with SMS link for the customer. Lockout, rekey, install, or repair.</p>
   </div>
-</section>
+  <div class="card" onclick="location.href='tools/dispatch.html#quote'">
+    <div class="icon">💰</div>
+    <h3>Rekey Quote</h3>
+    <p>Quick parts + labor estimate for rekey and master key systems by cylinder count and brand.</p>
+  </div>
+  <div class="card" onclick="location.href='tools/dispatch.html#bid'">
+    <div class="icon">📄</div>
+    <h3>Commercial Bid Builder</h3>
+    <p>Bid multi-door jobs with panic hardware, key systems, and door counts.</p>
+  </div>
+</div>
 
-<section id="why-us">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">Why Choose Us</div>
-      <h2>Why Sacramento Trusts Glazer Safe and Lock</h2>
-      <p>We treat every safe like it's our own — with care, expertise, and absolute respect for what's inside.</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-item"><i aria-hidden="true" class="fas fa-medal"></i><h4>Expert Craftsmanship</h4><p>Years of hands-on experience with all safe types — from gun safes to commercial vaults.</p></div>
-      <div class="feature-item"><i aria-hidden="true" class="fas fa-bolt"></i><h4>Fast Response</h4><p>When you're locked out, every minute counts. We prioritize emergency calls and arrive ready to work.</p></div>
-      <div class="feature-item"><i aria-hidden="true" class="fas fa-hand-holding-heart"></i><h4>Respectful Service</h4><p>We treat your property with care — clean work, non-destructive methods, and no mess left behind.</p></div>
-      <div class="feature-item"><i aria-hidden="true" class="fas fa-thumbs-up"></i><h4>100% Satisfaction</h4><p>Our reputation is built on happy customers. We don't leave until the job is done right.</p></div>
-    </div>
+<h2 class="section-title">🚗 Automotive</h2>
+<div class="cards">
+  <div class="card" onclick="location.href='tools/automotive.html'">
+    <div class="badge orange">Popular</div>
+    <div class="icon">🚙</div>
+    <h3>Car Lockout Dispatch</h3>
+    <p>Get tool recommendations + dispatch sheet by year, make, model, and lockout type.</p>
   </div>
-</section>
+  <div class="card" onclick="location.href='tools/automotive.html#fob'">
+    <div class="icon">🔑</div>
+    <h3>Key & Fob Quote</h3>
+    <p>Estimate parts + programming for transponders, fobs, smart keys, and combos.</p>
+  </div>
+  <div class="card" onclick="location.href='tools/automotive.html#ignition'">
+    <div class="icon">🔧</div>
+    <h3>Ignition Diagnostic</h3>
+    <p>Step-by-step guide for stuck keys, no-start, broken keys, and loose ignition.</p>
+  </div>
+</div>
 
-<section id="gallery">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">Our Work</div>
-      <h2>Safes Mr. Glazer Has Opened &amp; Repaired</h2>
-      <p>Every safe tells a story. Mr. Glazer first carefully diagnoses the issue, focuses on his target, then opens and repairs with precision. Here are just a few of the safes he's worked on.</p>
-    </div>
-    <div class="gallery-grid" role="list" aria-label="Safe work gallery">
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/centurion.jpg" alt="Centurion safe diagnostic and opening"></div><div class="gallery-cap">Centurion - Diagnostic &amp; Opening</div></div>
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/safe-work-1.jpg" alt="Safe diagnostic work — drilling a major vault"></div><div class="gallery-cap">Drilling a Major Vault</div></div>
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/major-open.jpg" alt="Major vault safe opened non-destructively"></div><div class="gallery-cap">Major Vault - Opened Non-Destructively</div></div>
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/winchester.jpg" alt="Winchester safe lockout open and repair"></div><div class="gallery-cap">Winchester Lockout, Open &amp; Repair</div></div>
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/drop-safe-2.jpg" alt="AMSEC drop safe servicing"></div><div class="gallery-cap">AMSEC Drop Safe - Full Servicing</div></div>
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/superior.jpg" alt="Superior safe lock replacement"></div><div class="gallery-cap">Superior Safe - Lock Replacement</div></div>
-      <div class="gallery-item" role="listitem"><div class="img-wrap"><img loading="lazy" src="gallery/safe-work-2.jpg" alt="Safe repair work shown"></div><div class="gallery-cap">(916) 996-9492</div></div>
-    </div>
+<h2 class="section-title">🔒 Safe Service</h2>
+<div class="cards">
+  <div class="card" onclick="location.href='tools/safe.html'">
+    <div class="badge purple">Expert</div>
+    <div class="icon">🔐</div>
+    <h3>Safe Service Intake</h3>
+    <p>Full intake form with reference number — captures brand, age, issue, and condition.</p>
   </div>
-</section>
+  <div class="card" onclick="location.href='tools/safe.html#pricing'">
+    <div class="icon">💰</div>
+    <h3>Safe Service Pricing</h3>
+    <p>Starting estimates for opening, combo changes, dial/digital replacement, upgrades, and GSA work.</p>
+  </div>
+</div>
 
-<section id="pricing">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">Pricing</div>
-      <h2>Transparent, Upfront Base Pricing</h2>
-      <p>Every safe job is different, but here are our starting rates so you know what to expect. No hidden fees, no surprises.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-truck"></i></div>
-        <h3>Service / Trip Fee</h3>
-        <div class="pricing-amount">$75</div>
-        <p class="pricing-note">starting at</p>
-        <p>Covers travel and initial assessment within our service area.</p>
-      </div>
-      <div class="pricing-card pricing-featured">
-        <div class="pricing-badge">Most Common</div>
-        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-unlock-keyhole"></i></div>
-        <h3>Safe Opening &amp; Repair</h3>
-        <div class="pricing-amount">$275</div>
-        <p class="pricing-note">starting at</p>
-        <p>Non-destructive opening and any needed repairs. Price varies by safe type and complexity.</p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-key-skeleton"></i></div>
-        <h3>Combination Change</h3>
-        <div class="pricing-amount">$175</div>
-        <p class="pricing-note">plus trip fee</p>
-        <p>Re-key or reset combinations on most safe types. Quick and secure.</p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-icon"><i aria-hidden="true" class="fas fa-shield"></i></div>
-        <h3>Lock Replacement &amp; Upgrades</h3>
-        <div class="pricing-amount">$275</div>
-        <p class="pricing-note">starting at + parts</p>
-        <p>Residential and commercial locks, electronic/keypad, deadbolts, and panic bars.</p>
-      </div>
-    </div>
-    <div class="pricing-disclaimer">
-      <i aria-hidden="true" class="fas fa-info-circle"></i> Every safe is different — these are base rates. Call <a href="tel:+19169969492">(916) 996-9492</a> for a personalized quote on your specific safe.
-    </div>
-  </div>
-</section>
-
-<section class="blog-preview" id="blog-preview">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">From Our Blog</div>
-      <h2>Safe &amp; Lock Tips &amp; Guides</h2>
-      <p>Expert advice from Glazer Safe and Lock — read our latest articles on safe opening, maintenance, and buying guides.</p>
-    </div>
-    <div class="blog-preview-grid" id="blogPreviewGrid">
-      <!-- loaded by JS from blog-config.json and posts-index.json -->
-    </div>
-    <div style="text-align:center;margin-top:28px;">
-      <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;color:#c8962e;font-weight:700;font-size:1rem;transition:gap .2s;">View All Articles <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<section id="areas">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">Service Area</div>
-      <h2>Serving Sacramento &amp; Surrounding Cities</h2>
-      <p>We travel to you — anywhere in the greater Sacramento area with fast, reliable service.</p>
-    </div>
-    <div class="areas-grid" role="list" aria-label="Service area cities">
-      <div class="area-chip" role="listitem">Sacramento</div><div class="area-chip" role="listitem">West Sacramento</div><div class="area-chip" role="listitem">Citrus Heights</div><div class="area-chip" role="listitem">Roseville</div>
-      <div class="area-chip" role="listitem">Elk Grove</div><div class="area-chip" role="listitem">Folsom</div><div class="area-chip" role="listitem">Carmichael</div><div class="area-chip" role="listitem">Rancho Cordova</div><div class="area-chip" role="listitem">Davis</div><div class="area-chip" role="listitem">Woodland</div>
-      <div class="area-chip" role="listitem">Fair Oaks</div><div class="area-chip" role="listitem">North Highlands</div>
-    </div>
-  </div>
-</section>
-
-<section class="emergency-banner">
-  <div class="container">
-    <h2><i aria-hidden="true" class="fas fa-bolt"></i> Emergency Safe Service Available</h2>
-    <p>Locked out after hours? Call our emergency line — we'll get you back in.</p>
-    <a href="tel:+19169969492" class="emergency-phone" aria-label="Emergency call (916) 996-9492"><i class="fas fa-phone-alt" aria-hidden="true"></i> (916) 996-9492</a>
-  </div>
-</section>
-
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag">Testimonials</div>
-      <h2>What Our Customers Say</h2>
-      <p>Don't take our word for it — hear from the Sacramento community we serve.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars"><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i></div>
-        <p>"I was locked out of my gun safe on a Sunday morning. Called Glazer and they walked me through the process — had me in within an hour. Professional, fast, and fair priced."</p>
-        <div class="testimonial-author">— Mark T., Sacramento</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars"><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i></div>
-        <p>"Needed the combination changed on my office safe after an employee left. Glazer came out same day, did the work in 20 minutes. Highly recommend."</p>
-        <div class="testimonial-author">— Jessica R., West Sacramento</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars"><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i><i aria-hidden="true" class="fas fa-star"></i></div>
-        <p>"My antique safe from the 1920s wouldn't open and I was nervous about damage. Glazer handled it like a pro — opened it without a scratch. True craftsman."</p>
-        <div class="testimonial-author">— David K., Folsom</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <h2>Get In Touch</h2>
-      <p>Need a safe opened, lock repaired, or have a question? Call us or send a message — we'll get back to you fast.</p>
-      <div class="contact-detail"><i aria-hidden="true" class="fas fa-phone-alt"></i><div><div class="label">Phone</div><div class="value"><a href="tel:+19169969492">(916) 996-9492</a></div></div></div>
-      <div class="contact-detail"><i aria-hidden="true" class="fas fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Tue–Sat: 6 AM – Until Finished</div></div></div>
-      <div class="contact-detail"><i aria-hidden="true" class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value"><a href="mailto:glazersafeandlock@fastmail.com">glazersafeandlock@fastmail.com</a></div></div></div>
-      <div class="contact-detail"><i aria-hidden="true" class="fas fa-map-pin"></i><div><div class="label">Service Area</div><div class="value">West Sacramento &amp; Greater Sacramento Region</div></div></div>
-      <div class="contact-detail"><i aria-hidden="true" class="fas fa-triangle-exclamation"></i><div><div class="label">Emergency</div><div class="value" style="color:#c8962e;">Available — call anytime</div></div></div>
-    </div>
-    <form class="contact-form" id="contactForm">
-      <h3>Send Us a Message</h3>
-      <div class="form-group"><label for="contactName" class="sr-only">Your Name</label><input type="text" id="contactName" name="name" placeholder="Your Name" required></div>
-      <div class="form-group"><label for="contactEmail" class="sr-only">Your Email</label><input type="email" id="contactEmail" name="email" placeholder="Your Email" required></div>
-      <div class="form-group"><label for="contactPhone" class="sr-only">Your Phone</label><input type="tel" id="contactPhone" name="phone" placeholder="Your Phone"></div>
-      <div class="form-group">
-        <label for="contactService" class="sr-only">Select a Service</label>
-        <select name="service" id="contactService">
-          <option value="">Select a Service...</option>
-          <option>Safe Opening</option><option>Safe Repair</option><option>Combination Change</option>
-          <option>Lock Installation / Repair</option><option>Emergency Service</option><option>Antique Safe</option><option>Other</option>
-        </select>
-      </div>
-      <div class="form-group"><label for="contactMessage" class="sr-only">Message</label><textarea name="message" id="contactMessage" placeholder="Tell us about your safe or lock issue..." required></textarea></div>
-      <button type="submit" class="btn-submit"><i aria-hidden="true" class="fas fa-paper-plane"></i> Send Message</button>
-    </form>
-  </div>
-</section>
+</div>
 
 <footer>
-  <div class="container">
-    <div class="copy">&copy; <span id="year"></span> Glazer Safe and Lock. All rights reserved. &nbsp;|&nbsp; <a href="legal.html" style="color:#c8962e;">Privacy &amp; Legal</a></div>
-    <div class="copy"><span>West Sacramento, CA</span> — <a href="tel:+19169969492">(916) 996-9492</a></div>
-  </div>
+  <p>LockCMD v1.0 — Built for locksmiths by locksmiths. <a href="help.html">❓ Help Guide</a></p>
 </footer>
-
-<script>
-  // Hamburger menu toggle
-  document.getElementById('hamburger').addEventListener('click',function(){
-    this.classList.toggle('active');
-    var expanded=this.getAttribute('aria-expanded')==='true'?'false':'true';
-    this.setAttribute('aria-expanded',expanded);
-    document.getElementById('navLinks').classList.toggle('active');
-  });
-  document.querySelectorAll('.nav-links a').forEach(function(l){
-    l.addEventListener('click',function(){
-      document.getElementById('hamburger').classList.remove('active');
-      document.getElementById('navLinks').classList.remove('active');
-    });
-  });
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-<!-- BLOG FEATURED POSTS LOADER -->
-<script>
-(function(){
-  var grid=document.getElementById('blogPreviewGrid');
-  if(!grid)return;
-  var x1=new XMLHttpRequest();
-  x1.open('GET','blog-config.json',true);
-  x1.onload=function(){
-    if(x1.status!==200)return;
-    try{var cfg=JSON.parse(x1.responseText);if(!cfg.show_on_homepage){grid.innerHTML='';return;}
-    var x2=new XMLHttpRequest();
-    x2.open('GET','posts-index.json',true);
-    x2.onload=function(){
-      if(x2.status!==200)return;
-      try{var posts=JSON.parse(x2.responseText);
-        var max=cfg.homepage_max_snippets||2;
-        var featured=posts.filter(function(p){return cfg.featured_posts&&cfg.featured_posts.indexOf(p.slug)!==-1;});
-        if(!featured.length)featured=posts.slice(0,max);
-        else featured=featured.slice(0,max);
-        grid.innerHTML='';
-        featured.forEach(function(p){
-          var d=document.createElement('div');d.className='blog-preview-card';
-          d.innerHTML='<div class="blog-preview-meta"><span class="cat">'+p.category+'</span><span>'+p.reading_time+'</span></div><h3><a href="posts/'+p.slug+'.html">'+p.title+'</a></h3><p>'+p.excerpt+'</p>';
-          grid.appendChild(d);
-        });
-      }catch(e){}};
-    x2.send();}catch(e){}};
-  x1.send();
-})();
-</script>
-
-<!-- GLAZER CHATBOT WIDGET -->
-<script>
-(function(){
-  var PHONE='(916) 996-9492', PH='tel:+19169969492', EMAIL='glazersafeandlock@fastmail.com', GREETINGS=['Hi there! I\'m the Glazer Safe assistant. How can I help you today?','Welcome! Whether you need a safe opened, advice on locks, or just have a question — I\'m here for you.','Need help with a safe or lock? Ask away — or upload a photo and I\'ll pass it to Mr. Glazer.','Good to see you! Ask me about services, pricing, hours, or browse our blog for detailed guides.'];
-  var faq=[], hist=[], open=false;
-
-  function el(t,a,c){
-    var e=document.createElement(t);
-    if(a) Object.keys(a).forEach(function(k){
-      var v=a[k];
-      if(k==='className') e.className=v;
-      else if(k==='style'&&typeof v==='object') Object.assign(e.style,v);
-      else if(k==='on'&&typeof v==='object') Object.keys(v).forEach(function(ev){e.addEventListener(ev,v[ev]);});
-      else if(k==='innerHTML') e.innerHTML=v;
-      else if(k==='textContent') e.textContent=v;
-      else if(k==='attrs'&&typeof v==='object') Object.keys(v).forEach(function(ak){e.setAttribute(ak,v[ak]);});
-      else e.setAttribute(k,v);
-    });
-    if(c) (Array.isArray(c)?c:[c]).forEach(function(x){if(typeof x==='string') e.appendChild(document.createTextNode(x));else if(x)e.appendChild(x);});
-    return e;
-  }
-
-  // Load FAQ
-  var xhr=new XMLHttpRequest();
-  xhr.open('GET','faq-data.json',true);
-  xhr.onload=function(){
-    if(xhr.status===200) try{faq=JSON.parse(xhr.responseText);}catch(e){setF();}
-    else setF();
-  };
-  xhr.onerror=setF;
-  xhr.send();
-  function setF(){faq=[{q:'What services do you offer?',a:'Safe opening, repair, combination changes, lock installation, emergency service, and antique safe work.'},{q:'How do I book?',a:'Call <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> or use our contact form.'},{q:'What are your hours?',a:'Tue-Sat 6AM-Until Finished. Emergency service available.'}];}
-
-  function tokenize(t){return t.toLowerCase().replace(/[^a-z0-9\s]/g,'').split(/\s+/).filter(Boolean);}
-  function score(q,item){
-    var qt=tokenize(q), ft=(item.q+' '+item.a).toLowerCase(), s=0;
-    qt.forEach(function(t){if(ft.indexOf(t)!==-1)s+=1;});
-    tokenize(item.q).forEach(function(t){if(qt.indexOf(t)!==-1)s+=0.5;});
-    return s;
-  }
-  function best(q,n){
-    n=n||3;
-    var sc=faq.map(function(i){return{it:i,sc:score(q,i)};}).sort(function(a,b){return b.sc-a.sc;}), r=[];
-    for(var i=0;i<sc.length&&r.length<n;i++) if(sc[i].sc>0) r.push(sc[i].it);
-    return r;
-  }
-
-  // Build widget
-  function build(){
-    if(document.getElementById('glz-btn'))return;
-    var btn=el('button',{id:'glz-btn',className:'glz-btn',innerHTML:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',attrs:{'aria-label':'Open chat'}});
-    var pnl=el('div',{id:'glz-pnl',className:'glz-pnl',style:{display:'none'}});
-    var hdr=el('div',{className:'glz-hdr'},[
-      el('div',{className:'glz-hinfo'},[
-        el('div',{className:'glz-av'},[el('img',{src:'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><circle cx="18" cy="18" r="16" fill="#c8962e"/><path d="M10 25 L15 12 Q18 8 21 12 L26 25 M13 20 L23 20" stroke="#0f172a" stroke-width="2" fill="none"/></svg>'),style:{width:'36px',height:'36px',borderRadius:'50%',display:'block'}})]),
-        el('div',null,[el('div',{className:'glz-nm'},'Glazer Safe & Lock'),el('div',{className:'glz-st'},'Online')])
-      ]),
-      el('button',{className:'glz-cl',innerHTML:'&times;',attrs:{'aria-label':'Close chat'},on:{click:toggle}})
-    ]);
-    var msgs=el('div',{id:'glz-msgs',className:'glz-msgs'});
-    var iw=el('div',{className:'glz-iw'},[
-      el('div',{className:'glz-upw'},[
-        el('button',{className:'glz-upb',innerHTML:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',attrs:{'aria-label':'Upload photo'},on:{click:function(){document.getElementById('glz-img').click();}}}),
-        el('input',{type:'file',id:'glz-img',accept:'image/*',style:{display:'none'},on:{change:function(e){
-          var f=e.target.files[0];if(!f)return;
-          var r=new FileReader();r.onload=function(ev){
-            var d=el('div',{className:'glz-msg glz-msg-u'}),im=el('img',{src:ev.target.result,alt:f.name,className:'glz-img',style:{maxWidth:'180px',borderRadius:'12px',display:'block'}});
-            d.appendChild(im);document.getElementById('glz-msgs').appendChild(d);scrl();
-            setTimeout(function(){bot('Thanks for uploading! Call <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> and mention the photo for a precise quote.');},500);
-          };r.readAsDataURL(f);e.target.value='';
-        }}})
-      ]),
-      el('input',{type:'text',id:'glz-inp',className:'glz-inp',placeholder:'Ask about services, pricing...',on:{keydown:function(e){if(e.key==='Enter'){e.preventDefault();send();}}}}),
-      el('button',{className:'glz-snd',innerHTML:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',attrs:{'aria-label':'Send message'},on:{click:send}})
-    ]);
-    var sug=el('div',{id:'glz-sug',className:'glz-sug'});
-    pnl.appendChild(hdr);pnl.appendChild(msgs);pnl.appendChild(sug);pnl.appendChild(iw);
-    document.body.appendChild(btn);document.body.appendChild(pnl);
-    btn.addEventListener('click',toggle);
-  }
-
-  function toggle(){
-    open=!open;
-    document.getElementById('glz-pnl').style.display=open?'flex':'none';
-    document.getElementById('glz-btn').style.display=open?'none':'flex';
-    if(open){
-      showSug();
-      if(!hist.length) setTimeout(function(){bot(GREETINGS[Math.floor(Math.random()*GREETINGS.length)]);},300);
-      document.getElementById('glz-inp').focus();
-    }
-  }
-
-  function bot(t){
-    var m=el('div',{className:'glz-msg glz-msg-b',innerHTML:t});
-    document.getElementById('glz-msgs').appendChild(m);hist.push({r:'bot',t:t});scrl();
-  }
-  function usr(t){
-    var m=el('div',{className:'glz-msg glz-msg-u'});m.textContent=t;
-    document.getElementById('glz-msgs').appendChild(m);hist.push({r:'usr',t:t});scrl();
-  }
-  function scrl(){setTimeout(function(){document.getElementById('glz-msgs').scrollTop=99999;},50);}
-  function typ(){
-    var d=el('div',{className:'glz-msg glz-msg-b glz-typ',id:'glz-typ',innerHTML:'<span></span><span></span><span></span>'});
-    document.getElementById('glz-msgs').appendChild(d);scrl();
-  }
-  function untyp(){var d=document.getElementById('glz-typ');if(d)d.remove();}
-
-  function showSug(){
-    var c=document.getElementById('glz-sug');c.innerHTML='';
-    ['Services','Pricing','Book a Service','Read Blog','Emergency Help'].forEach(function(t){
-      c.appendChild(el('button',{className:'glz-sc',textContent:t,on:{click:function(){usr(t);c.innerHTML='';setTimeout(function(){respond(t);},400);}}}));
-    });
-  }
-
-  function send(){
-    var inp=document.getElementById('glz-inp'),t=inp.value.trim();if(!t)return;
-    inp.value='';document.getElementById('glz-sug').innerHTML='';usr(t);setTimeout(function(){respond(t);},400);
-  }
-
-  function respond(q){
-    typ();var l=q.toLowerCase();
-    setTimeout(function(){
-      untyp();
-      // --- Emergency / urgent ---
-      if(l.indexOf('emergency')!==-1||l.indexOf('urgent')!==-1||l.indexOf('locked out')!==-1||l.indexOf('stuck')!==-1||l.indexOf('can\'t open')!==-1||l.indexOf('wont open')!==-1||l.indexOf('won\'t open')!==-1){
-        bot('I\'m sorry to hear you\'re in a tough spot! 🚨 Please call Mr. Glazer right now for immediate help:<br><br><a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.2rem;">'+PHONE+'</a><br><br>He can walk you through next steps and get you back in your safe as quickly as possible.');
-        return;
-      }
-      // --- Booking / contact ---
-      if(l.indexOf('book')!==-1||l.indexOf('appointment')!==-1||l.indexOf('schedule')!==-1||l.indexOf('contact')!==-1||l.indexOf('call')!==-1||l.indexOf('reach')!==-1){
-        bot('We\'d be happy to help! You can reach Mr. Glazer directly at:<br><br>📞 <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a><br>📧 <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a><br><br>Or use the contact form on this page and we\'ll get back to you promptly.');
-        return;
-      }
-      // --- Pricing ---
-      if(l.indexOf('pric')!==-1||l.indexOf('cost')!==-1||l.indexOf('how much')!==-1||l.indexOf('rate')!==-1||l.indexOf('quote')!==-1||l.indexOf('fee')!==-1||l.indexOf('trip')!==-1){
-        bot('Great question! Here are our general rates:<br><br>🔧 Service/Trip Fee — $75+<br>🔑 Combination Change — $175<br>🔓 Safe Opening & Repair — $275+<br>🛡️ Lock Replacement — $275+ + parts<br><br>These are estimates — every job is a little different. Call Mr. Glazer at <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a> for an exact quote based on your specific safe and situation.');
-        return;
-      }
-      // --- Hours / location ---
-      if(l.indexOf('hour')!==-1||l.indexOf('location')!==-1||l.indexOf('address')!==-1||l.indexOf('open')!==-1||l.indexOf('close')!==-1||l.indexOf('where')!==-1){
-        bot('We\'re based in <strong>West Sacramento, CA</strong> and serve the entire Sacramento area.<br><br>🕐 <strong>Hours:</strong> Tuesday–Saturday, 6 AM – Until Finished<br>🚨 <strong>Emergency service</strong> available outside regular hours — just call!');
-        return;
-      }
-      // --- Photo upload ---
-      if(l.indexOf('photo')!==-1||l.indexOf('upload')!==-1||l.indexOf('picture')!==-1||l.indexOf('image')!==-1||l.indexOf('send')!==-1){
-        bot('You can upload a photo using the <strong>image icon</strong> (📷) next to the chat input. That way Mr. Glazer can see exactly what you\'re working with and give you a more accurate estimate!');
-        return;
-      }
-      // --- Email / contact info ---
-      if(l.indexOf('email')!==-1||l.indexOf('mail')!==-1){
-        bot('You can reach Mr. Glazer by email at <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a>. He checks messages regularly and will get back to you.');
-        return;
-      }
-      // --- Privacy / legal ---
-      if(l.indexOf('privacy')!==-1||l.indexOf('legal')!==-1||l.indexOf('disclaimer')!==-1){
-        bot('You can view our full Privacy Policy and Legal Disclaimer here: <a href="legal.html" style="color:#c8962e;font-weight:600;">➜ Privacy &amp; Legal</a>');
-        return;
-      }
-      // --- Electronic lock / keypad failure (check batteries first) ---
-      if(l.indexOf('keypad')!==-1||l.indexOf('electronic')!==-1||l.indexOf('battery')!==-1||l.indexOf('batteries')!==-1||l.indexOf('non responsive')!==-1||l.indexOf('won\'t work')!==-1||l.indexOf('wont work')!==-1||l.indexOf('not working')!==-1||l.indexOf('doesn\'t work')!==-1||l.indexOf('dead')!==-1||l.indexOf('no power')!==-1||l.indexOf('button')!==-1){
-        bot('That can be frustrating! Let\'s start with the most common fix:<br><br>🔋 <strong>Check the batteries.</strong> Use fresh <strong>Duracell</strong> or <strong>Energizer</strong> batteries only — cheap batteries can cause issues even when they seem new.<br><br>If that doesn\'t do the trick, we have a blog post comparing dial vs electronic locks that might help: <a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>If you\'re still stuck after trying fresh batteries, give Mr. Glazer a call — he\'ll figure it out: <a href="'+PH+'" style="color:#c8962e;font-weight:700;">'+PHONE+'</a>');
-        return;
-      }
-      // --- Forgot combination (kind, not pushy) ---
-      if(l.indexOf('forgot')!==-1&&(l.indexOf('combination')!==-1||l.indexOf('combo')!==-1||l.indexOf('code')!==-1)){
-        bot('Oh no, that\'s frustrating! Don\'t worry — Mr. Glazer can help you get back into your safe.<br><br>📞 <strong>Call him at</strong> <a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.1rem;">'+PHONE+'</a><br><br>We also have a helpful blog post about dial vs electronic locks that might be useful if you\'re curious about different lock types: <a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>Either way, we\'re here to help!');
-        return;
-      }
-      // ===== BLOG-AWARE ANSWERS =====
-      // Post #1: Dial safe lock instructions
-      if(l.indexOf('dial')!==-1||l.indexOf('instruction')!==-1||l.indexOf('sargent')!==-1||l.indexOf('lagard')!==-1||l.indexOf('kaba')!==-1||l.indexOf('spin')!==-1||(l.indexOf('how to open')!==-1&&l.indexOf('safe')!==-1)){
-        bot('Great topic! Each brand of dial lock works a bit differently. We have a detailed guide that covers Sargent &amp; Greenleaf, LaGard, and Kaba Mas step by step.<br><br><a href="posts/001-dial-safe-lock-instructions.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Safe Lock Instructions by Brand</a><br><br>If you have a specific safe you\'re working with, feel free to call Mr. Glazer and he can help talk you through it.');
-        return;
-      }
-      // Post #2: Dial vs electronic
-      if((l.indexOf('dial')!==-1&&l.indexOf('electronic')!==-1)||(l.indexOf('mechanical')!==-1&&l.indexOf('digital')!==-1)||(l.indexOf('which lock')!==-1)||(l.indexOf('lock type')!==-1)||(l.indexOf('better lock')!==-1)||l.indexOf('keypad')!==-1||(l.indexOf('combination')!==-1&&l.indexOf('forgot')===-1)){
-        bot('That\'s an important decision! Mechanical dial locks and electronic keypad locks each have their own strengths. We wrote a guide comparing them to help you choose.<br><br><a href="posts/002-dial-vs-electronic-locks.html" style="color:#c8962e;font-weight:600;">➜ Read: Dial Locks vs Electronic Locks</a><br><br>Still unsure? Give Mr. Glazer a call — he\'s happy to make a recommendation based on your setup.');
-        return;
-      }
-      // Post #3: Safe servicing / maintenance
-      if(l.indexOf('maintenance')!==-1||l.indexOf('prevent')!==-1||l.indexOf('inspect')!==-1||l.indexOf('lubricate')!==-1||l.indexOf('graphite')!==-1||l.indexOf('rust')!==-1||(l.indexOf('how often')!==-1&&l.indexOf('safe')!==-1)||l.indexOf('care')!==-1){
-        bot('Regular maintenance really does keep your safe working smoothly for years. We have a guide on recommended service schedules and what to look out for.<br><br><a href="posts/003-importance-of-safe-servicing.html" style="color:#c8962e;font-weight:600;">➜ Read: The Importance of Servicing Your Safe</a><br><br>If you haven\'t had your safe serviced in a while, it might be time — Mr. Glazer can take a look.');
-        return;
-      }
-      // Post #4: Choosing / buying a safe
-      if(l.indexOf('choose')!==-1||l.indexOf('buy')!==-1||l.indexOf('purchase')!==-1||l.indexOf('select')!==-1||l.indexOf('recommend')!==-1||l.indexOf('what safe')!==-1||(l.indexOf('size')!==-1&&l.indexOf('safe')!==-1)||l.indexOf('gun safe')!==-1||l.indexOf('home safe')!==-1){
-        bot('Buying a safe is an investment — you want to get it right. Our guide covers size, fire rating, lock type, and budget to help you decide.<br><br><a href="posts/004-choose-right-safe.html" style="color:#c8962e;font-weight:600;">➜ Read: How to Choose the Right Safe</a><br><br>If you\'d like a personal recommendation, Mr. Glazer is always happy to help based on what you\'re storing and where.');
-        return;
-      }
-      // Post #5: Fire ratings
-      if(l.indexOf('fire')!==-1||l.indexOf('rating')!==-1||l.indexOf('heat')!==-1||l.indexOf('burn')!==-1||l.indexOf('secluded')!==-1||l.indexOf('garage')!==-1||l.indexOf('outbuilding')!==-1||l.indexOf('workshop')!==-1||l.indexOf('detached')!==-1||l.indexOf('fireproof')!==-1){
-        bot('Fire ratings can be confusing — especially when you\'re placing a safe in a garage, workshop, or outbuilding. Our guide breaks down what you actually need.<br><br><a href="posts/005-fire-ratings-for-secluded-areas.html" style="color:#c8962e;font-weight:600;">➜ Read: Fire Ratings for Secluded Areas</a><br><br>Have questions about your specific setup? Mr. Glazer can help — just give him a call.');
-        return;
-      }
-      // Post #6: Safe opening methods
-      if(l.indexOf('manipulation')!==-1||l.indexOf('non-destructive')!==-1||l.indexOf('bypass')!==-1||l.indexOf('scope')!==-1||l.indexOf('drill')!==-1||l.indexOf('drilling')!==-1||l.indexOf('destroy')!==-1||l.indexOf('burglary')!==-1||l.indexOf('peel')!==-1||l.indexOf('pry')!==-1||l.indexOf('crowbar')!==-1||l.indexOf('torch')!==-1||(l.indexOf('crack')!==-1&&l.indexOf('safe')!==-1)){
-        bot('There are many ways a safe can be opened — some careful and professional, others destructive. We wrote a comprehensive guide covering everything from manipulation to burglary techniques (so you know what to protect against).<br><br><a href="posts/006-safe-opening-methods.html" style="color:#c8962e;font-weight:600;">➜ Read: Safe Opening Methods</a><br><br>If you need your safe opened, Mr. Glazer always prefers non-destructive methods first.');
-        return;
-      }
-      // Blog in general
-      if(l.indexOf('blog')!==-1||l.indexOf('article')!==-1||l.indexOf('read')!==-1||l.indexOf('tips')!==-1||l.indexOf('guides')!==-1||l.indexOf('learn')!==-1||l.indexOf('information')!==-1){
-        bot('📚 <strong>Visit our Blog</strong><br>We have helpful articles on dial lock instructions, dial vs electronic locks, safe servicing, buying advice, fire ratings, and safe opening methods.<br><br><a href="blog.html" style="color:#c8962e;font-weight:600;">➜ Read All Articles</a>');
-        return;
-      }
-      // --- FAQ fuzzy match ---
-      var m=best(q,2);
-      if(m.length>0){
-        var r='';
-        m.forEach(function(x,i){if(i>0)r+='<br><br>';r+='💬 <strong>'+x.q+'</strong><br>'+x.a;});
-        bot(r+'<br><br>If you have more questions, Mr. Glazer is just a phone call away: <a href="'+PH+'" style="color:#c8962e;font-weight:600;">'+PHONE+'</a>');
-        return;
-      }
-      // --- Don't know: polite fallback ---
-      bot('That\'s a great question — and I want to make sure you get the right answer. I\'m just a little assistant, but Mr. Glazer himself has over 8 years of hands-on safe experience and would be happy to help.<br><br>📞 <strong>Call him at</strong> <a href="'+PH+'" style="color:#c8962e;font-weight:700;font-size:1.1rem;">'+PHONE+'</a><br>📧 <strong>Or email</strong> <a href="mailto:'+EMAIL+'" style="color:#c8962e;font-weight:600;">'+EMAIL+'</a><br><br>In the meantime, feel free to browse our <a href="blog.html" style="color:#c8962e;font-weight:600;">Blog</a> for detailed guides on all things safes and locks.');
-    },500);
-  }
-
-  // Styles
-  function css(){
-    var s=document.createElement('style');
-    s.textContent='.glz-btn{position:fixed;bottom:28px;right:28px;z-index:10000;width:60px;height:60px;border-radius:50%;border:none;background:#c8962e;color:#0f172a;cursor:pointer;box-shadow:0 6px 24px rgba(200,150,46,0.4);display:flex;align-items:center;justify-content:center;transition:transform .2s}.glz-btn:hover{transform:scale(1.08)}.glz-pnl{position:fixed;bottom:28px;right:28px;z-index:10000;width:380px;height:560px;max-height:calc(100vh-80px);background:#fff;border-radius:20px;box-shadow:0 16px 64px rgba(15,23,42,0.2);display:none;flex-direction:column;overflow:hidden;animation:glzU .3s ease}@keyframes glzU{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0)}}.glz-hdr{background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.glz-hinfo{display:flex;align-items:center;gap:12px}.glz-av{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0}.glz-nm{color:#fff;font-weight:700;font-size:.95rem}.glz-st{color:rgba(255,255,255,0.6);font-size:.75rem}.glz-st::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:4px;vertical-align:middle}.glz-cl{background:none;border:none;color:rgba(255,255,255,0.6);font-size:1.6rem;cursor:pointer;line-height:1;padding:0 4px}.glz-cl:hover{color:#fff}.glz-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f8f7f4}.glz-msg{max-width:85%;padding:12px 16px;border-radius:16px;font-size:.93rem;line-height:1.5;word-wrap:break-word;animation:glzF .2s ease}@keyframes glzF{from{opacity:0;transform:translateY(8px)}to{opacity:1}}.glz-msg-b{align-self:flex-start;background:#fff;color:#1a1a2e;border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}.glz-msg-u{align-self:flex-end;background:#0f172a;color:#fff;border-bottom-right-radius:4px}.glz-msg a{text-decoration:underline}.glz-typ{display:flex;gap:4px;align-items:center;padding:14px 18px}.glz-typ span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4a4a6a;animation:glzB 1.2s ease-in-out infinite}.glz-typ span:nth-child(2){animation-delay:.2s}.glz-typ span:nth-child(3){animation-delay:.4s}@keyframes glzB{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-6px);opacity:1}}.glz-sug{display:flex;gap:8px;padding:8px 16px;overflow-x:auto;flex-shrink:0;background:#f8f7f4;border-top:1px solid #e8e6e0;min-height:44px}.glz-sc{white-space:nowrap;padding:8px 16px;border-radius:100px;border:1px solid #d4d2cc;background:#fff;font-size:.82rem;font-weight:500;color:#1a1a2e;cursor:pointer;transition:all .2s;font-family:Inter,sans-serif}.glz-sc:hover{border-color:#c8962e;color:#c8962e}.glz-iw{display:flex;align-items:center;gap:8px;padding:12px 16px 16px;flex-shrink:0;background:#fff;border-top:1px solid #e8e6e0}.glz-upb{background:none;border:1px solid #d4d2cc;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4a4a6a;transition:all .2s;flex-shrink:0}.glz-upb:hover{border-color:#c8962e;color:#c8962e}.glz-inp{flex:1;padding:10px 16px;border:1px solid #d4d2cc;border-radius:100px;font-size:.9rem;font-family:Inter,sans-serif;background:#f8f7f4;outline:none}.glz-inp:focus{border-color:#c8962e}.glz-inp::placeholder{color:#9a9ab0}.glz-snd{background:#c8962e;border:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#0f172a;transition:background .2s;flex-shrink:0}.glz-snd:hover{background:#dba73b}.glz-img{max-width:100%;border-radius:12px;display:block}@media(max-width:480px){.glz-pnl{left:12px;right:12px;bottom:16px;width:auto;height:calc(100vh-32px);border-radius:16px}.glz-btn{bottom:20px;right:20px;width:56px;height:56px}}';
-    document.head.appendChild(s);
-  }
-
-  css();build();
-})();
-</script>
-
-<!-- COOKIE CONSENT BANNER -->
-<div id="cookie-banner" role="alertdialog" aria-label="Cookie notice" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:16px 24px;display:none;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:2px solid #c8962e;font-family:Inter,sans-serif;font-size:.9rem;line-height:1.5">
-  <div style="flex:1;min-width:240px">
-    <strong style="color:#c8962e">Cookie Notice</strong>
-    <span style="color:rgba(255,255,255,0.7)"> — This site uses minimal cookies for functionality. We don't track or sell your data. By continuing, you accept basic cookies. <a href="legal.html" style="color:#c8962e;text-decoration:underline">Learn more</a>.</span>
-  </div>
-  <div style="display:flex;gap:8px;flex-shrink:0">
-    <button id="cookie-accept" style="background:#c8962e;color:#0f172a;border:none;padding:10px 24px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.85rem;font-family:Inter,sans-serif">Accept</button>
-    <button id="cookie-decline" style="background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.2);padding:10px 24px;border-radius:6px;font-weight:500;cursor:pointer;font-size:.85rem;font-family:Inter,sans-serif">Decline</button>
-  </div>
-</div>
-<script>
-(function(){
-  var banner=document.getElementById('cookie-banner');
-  if(localStorage.getItem('glz_cookie_consent')){return;}
-  banner.style.display='flex';
-  document.getElementById('cookie-accept').addEventListener('click',function(){
-    localStorage.setItem('glz_cookie_consent','accepted');
-    banner.style.display='none';
-  });
-  document.getElementById('cookie-decline').addEventListener('click',function(){
-    localStorage.setItem('glz_cookie_consent','declined');
-    banner.style.display='none';
-  });
-})();
-</script>
-
-<!-- ADA ACCESSIBILITY CONTROLS -->
-<div id="ada-btn" role="button" tabindex="0" aria-label="Accessibility options" style="position:fixed;bottom:19px;left:17px;z-index:9995;width:60px;height:60px;border-radius:50%;border:none;background:#c8962e;color:#0f172a;cursor:pointer;box-shadow:0 6px 24px rgba(200,150,46,0.4);display:flex;align-items:center;justify-content:center;transition:transform .2s" onclick="toggleADA()" onkeydown="if(event.key==='Enter'||event.key===' ')event.preventDefault(),toggleADA()">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M4 11l4 2 2 7 1-8 3-2 3 2 1 8 2-7 4-2"/><circle cx="12" cy="12" r="10"/></svg>
-</div>
-
-<div id="ada-panel" style="position:fixed;bottom:100px;left:24px;z-index:9995;width:280px;background:#fff;border-radius:16px;box-shadow:0 12px 48px rgba(15,23,42,0.15);border:1px solid #e8e6e0;display:none;flex-direction:column;overflow:hidden;font-family:Inter,sans-serif;animation:adaUp .3s ease">
-  <div style="background:#0f172a;color:#fff;padding:14px 20px;font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:10px">
-    <i aria-hidden="true" class="fas fa-universal-access" style="color:#c8962e"></i> Accessibility
-    <button onclick="toggleADA()" aria-label="Close accessibility panel" style="margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.5);font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px">&times;</button>
-  </div>
-  <div style="padding:16px 20px;display:flex;flex-direction:column;gap:12px">
-    <!-- Font size -->
-    <div style="display:flex;align-items:center;justify-content:space-between">
-      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">Text Size</span>
-      <div style="display:flex;gap:6px">
-        <button onclick="adaChangeFont(-1)" aria-label="Decrease text size" style="width:36px;height:36px;border-radius:50%;border:1px solid #d4d2cc;background:#f8f7f4;cursor:pointer;font-weight:700;color:#1a1a2e">A-</button>
-        <button onclick="adaResetFont()" aria-label="Reset text size to default" style="width:36px;height:36px;border-radius:50%;border:1px solid #c8962e;background:#fff;cursor:pointer;font-weight:700;color:#1a1a2e;font-size:.8rem">A</button>
-        <button onclick="adaChangeFont(1)" aria-label="Increase text size" style="width:36px;height:36px;border-radius:50%;border:1px solid #d4d2cc;background:#f8f7f4;cursor:pointer;font-weight:700;color:#1a1a2e">A+</button>
-      </div>
-    </div>
-    <hr style="border:0;border-top:1px solid #e8e6e0;margin:2px 0">
-    <!-- High contrast -->
-    <div style="display:flex;align-items:center;justify-content:space-between">
-      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">High Contrast</span>
-      <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-        <input type="checkbox" id="ada-contrast" onchange="adaToggleContrast()" style="opacity:0;width:0;height:0">
-        <span style="position:absolute;inset:0;background:#d4d2cc;border-radius:24px;transition:background .3s"></span>
-        <span id="ada-contrast-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
-      </label>
-    </div>
-    <hr style="border:0;border-top:1px solid #e8e6e0;margin:2px 0">
-    <!-- Larger cursor -->
-    <div style="display:flex;align-items:center;justify-content:space-between">
-      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">Larger Cursor</span>
-      <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-        <input type="checkbox" id="ada-cursor" onchange="adaToggleCursor()" style="opacity:0;width:0;height:0">
-        <span style="position:absolute;inset:0;background:#d4d2cc;border-radius:24px;transition:background .3s"></span>
-        <span id="ada-cursor-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
-      </label>
-    </div>
-    <hr style="border:0;border-top:1px solid #e8e6e0;margin:2px 0">
-    <!-- Pause animations -->
-    <div style="display:flex;align-items:center;justify-content:space-between">
-      <span style="font-size:.85rem;color:#1a1a2e;font-weight:500">Pause Animations</span>
-      <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-        <input type="checkbox" id="ada-anim" onchange="adaToggleAnim()" style="opacity:0;width:0;height:0">
-        <span style="position:absolute;inset:0;background:#d4d2cc;border-radius:24px;transition:background .3s"></span>
-        <span id="ada-anim-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)"></span>
-      </label>
-    </div>
-  </div>
-</div>
-
-<style>
-  @keyframes adaUp{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0)}}
-  #ada-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(15,23,42,0.4)}
-  #ada-btn:focus-visible{outline:2px solid #c8962e;outline-offset:4px}
-  .ada-high-contrast{background:#111!important;color:#fff!important;border-color:#c8962e!important}
-  .ada-high-contrast h1,.ada-high-contrast h2,.ada-high-contrast h3,.ada-high-contrast h4,.ada-high-contrast .section-tag,.ada-high-contrast .nav-logo{color:#c8962e!important}
-  .ada-high-contrast p,.ada-high-contrast li,.ada-high-contrast .value,.ada-high-contrast .label{color:#fff!important}
-  .ada-high-contrast a{color:#ffd166!important}
-  .ada-high-contrast .hero-card,.ada-high-contrast .service-card,.ada-high-contrast .pricing-card,.ada-high-contrast .testimonial-card,.ada-high-contrast .blog-card{background:#1a1a2e!important;border-color:#c8962e!important}
-  .ada-high-contrast .pricing-card .price{color:#ffd166!important}
-  .ada-high-contrast .galz-cap{background:#1a1a2e!important}
-  .ada-high-contrast .navbar{background:#0a0f1a!important}
-  .ada-high-contrast .btn-primary{background:#c8962e!important;color:#0f172a!important}
-  .ada-high-contrast .btn-secondary{border-color:#c8962e!important;color:#c8962e!important}
-  .ada-large-cursor{cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="%23c8962e" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="%23c8962e"/></svg>'),auto!important}
-  .ada-paused *, .ada-paused *::before, .ada-paused *::after{animation-play-state:paused!important;transition-duration:0s!important;scroll-behavior:auto!important}
-</style>
-
-<script>
-(function(){
-  // Load saved preferences
-  var font=parseInt(localStorage.getItem('ada_font')||'0',10);
-  if(font!==0) document.documentElement.style.fontSize=(100+font*5)+'%';
-  if(localStorage.getItem('ada_contrast')==='1'){document.body.classList.add('ada-high-contrast');document.getElementById('ada-contrast').checked=true;document.getElementById('ada-contrast-knob').style.transform='translateX(20px)';}
-  if(localStorage.getItem('ada_cursor')==='1'){document.body.classList.add('ada-large-cursor');document.getElementById('ada-cursor').checked=true;document.getElementById('ada-cursor-knob').style.transform='translateX(20px)';}
-  if(localStorage.getItem('ada_anim')==='1'){document.documentElement.classList.add('ada-paused');document.getElementById('ada-anim').checked=true;document.getElementById('ada-anim-knob').style.transform='translateX(20px)';}
-})();
-var adaFontSize=parseInt(localStorage.getItem('ada_font')||'0',10);
-function toggleADA(){var p=document.getElementById('ada-panel');p.style.display=p.style.display==='flex'?'none':'flex';}
-function adaChangeFont(d){adaFontSize=Math.max(-2,Math.min(2,adaFontSize+d));document.documentElement.style.fontSize=(100+adaFontSize*5)+'%';localStorage.setItem('ada_font',adaFontSize);}
-function adaResetFont(){adaFontSize=0;document.documentElement.style.fontSize='';localStorage.setItem('ada_font','0');}
-function adaToggleContrast(){var on=document.getElementById('ada-contrast').checked;document.body.classList.toggle('ada-high-contrast',on);document.getElementById('ada-contrast-knob').style.transform=on?'translateX(20px)':'';localStorage.setItem('ada_contrast',on?'1':'0');}
-function adaToggleCursor(){var on=document.getElementById('ada-cursor').checked;document.body.classList.toggle('ada-large-cursor',on);document.getElementById('ada-cursor-knob').style.transform=on?'translateX(20px)':'';localStorage.setItem('ada_cursor',on?'1':'0');}
-function adaToggleAnim(){var on=document.getElementById('ada-anim').checked;document.documentElement.classList.toggle('ada-paused',on);document.getElementById('ada-anim-knob').style.transform=on?'translateX(20px)':'';localStorage.setItem('ada_anim',on?'1':'0');}
-</script>
 
 </body>
 </html>
